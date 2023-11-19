@@ -1,3 +1,71 @@
 /*
     You can add your own custom styles here.
 */
+
+:root {
+    --body-background: #ffffff;
+    --card-background: var(--body-background);
+    --card-border: #000000 solid 3px;
+}
+
+:root[data-scheme="dark"] {
+  --body-background: #000000;
+  --card-background: var(--body-background);
+  --card-border: white solid 3px;
+}
+
+section.article-list,
+div.article-list--tile,
+section.article-list--compact,
+div.article-list--compact {
+  article {
+    border-radius: 0;
+    border: var(--card-border);
+
+    &.has-image {
+      & > header {
+        display: flex;
+        flex-direction: row-reverse;
+
+        & > .article-image {
+          a {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+
+            img {
+              flex: 1;
+            }
+          }
+        }
+
+        & > .article-details {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+div.article-list--compact {
+  article {
+    margin-bottom: 10px;
+    border-bottom: var(--card-border) !important;
+  }
+}
+
+.site-avatar {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.site-avatar.loaded {
+  opacity: 1;
+}

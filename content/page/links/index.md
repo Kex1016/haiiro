@@ -1,10 +1,18 @@
 ---
-title: Links
+title: My Links
 links:
   - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
+    description: Check out my GitHub profile!
+    website: https://github.com/Kex1016
     image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+  - title: AniList
+    description: Sometimes I watch anime. Most the time I read manga. Check out my AniList profile!
+    website: https://anilist.co/user/cakes/
+    image: https://anilist.co/img/icons/icon.svg
+  - title: Stats.fm
+    description: I love music. Check out my stats!
+    website: https://stats.fm/the_cakes
+    image: https://safe.haiiro.moe/jASUep2queVf.png
 menu:
     main: 
         weight: 4
@@ -12,22 +20,6 @@ menu:
             icon: link
 
 comments: false
+license: false
+readingTime: false
 ---
-
-To use this feature, add `links` section to frontmatter.
-
-This page's frontmatter:
-
-```yaml
-links:
-  - title: GitHub
-    description: GitHub is the world's largest software development platform.
-    website: https://github.com
-    image: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
-  - title: TypeScript
-    description: TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-    website: https://www.typescriptlang.org
-    image: ts-logo-128.jpg
-```
-
-`image` field accepts both local and external images.
