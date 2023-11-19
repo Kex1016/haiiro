@@ -69,3 +69,66 @@ div.article-list--compact {
 .site-avatar.loaded {
   opacity: 1;
 }
+
+main > header {
+  color: var(--card-text-color-main);
+  height: calc(100vh - var(--main-top-padding));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+main > header .logo {
+  font-size: 10rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0;
+  margin-bottom: 10rem;
+}
+
+main > header .logo .jp {
+  opacity: 0.3;
+  transform: rotate(12deg);
+}
+
+main > header .text {
+  font-size: 2rem;
+  text-align: center;
+  opacity: 0.5;
+}
+
+main > header .text a {
+  color: var(--card-text-color-main);
+}
+
+main > header .arrow-down {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid var(--card-text-color-main);
+  animation: arrow-down 1s infinite;
+}
+
+@media (max-width: 767px) {
+    main > header {
+        height: calc(100vh - var(--main-top-padding) - var(--section-separation) - 220px);
+    }
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(1rem);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
