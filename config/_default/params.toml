@@ -55,7 +55,7 @@ limit = 10
 type = "toc"
 
 [opengraph.twitter]
-site = "@cakeswastaken"
+site = "cakeswastaken"
 card = "summary_large_image"
 
 [defaultImage.opengraph]

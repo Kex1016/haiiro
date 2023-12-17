@@ -3,3 +3,4 @@ resources
 .hugo_build.lock
 content_example
 hcache
+.idea
