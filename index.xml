@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Haiiro</title><link>https://haiiro.moe/</link><description>Recent content on Haiiro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 30 Mar 2024 18:50:00 +0100</lastBuildDate><atom:link href="https://haiiro.moe/index.xml" rel="self" type="application/rss+xml"/><item><title>I made a tool to rescore your AL library!</title><link>https://haiiro.moe/p/al-rescorer/</link><pubDate>Sat, 30 Mar 2024 18:50:00 +0100</pubDate><guid>https://haiiro.moe/p/al-rescorer/</guid><description>&lt;h1 id="hi">
+&lt;a href="#hi">#&lt;/a>
+Hi!
+&lt;/h1>&lt;p>Here&amp;rsquo;s this month&amp;rsquo;s &amp;ldquo;I made a&amp;rdquo; post! This time, I made a tool to
+quickly re-score your AniList library! It&amp;rsquo;s my first go at publishing
+a full web app, and I&amp;rsquo;m honestly pretty happy with how it turned out.&lt;/p>
+&lt;h2 id="what-does-it-do">
+&lt;a href="#what-does-it-do">#&lt;/a>
+What does it do?
+&lt;/h2>&lt;p>It&amp;rsquo;s simple:&lt;/p>
+&lt;ul>
+&lt;li>You log in with your AniList account&lt;/li>
+&lt;li>You go to the list view, and select an item&lt;/li>
+&lt;li>You edit the item directly, or go to the bulk editor to edit multiple items at once&lt;/li>
+&lt;li>You save your changes&lt;/li>
+&lt;li>Done!&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-does-it-work">
+&lt;a href="#how-does-it-work">#&lt;/a>
+How does it work?
+&lt;/h2>&lt;p>The app uses the AniList API to fetch your library data, and then
+sends the changes back to the API. It&amp;rsquo;s a pretty simple setup, but
+it&amp;rsquo;s been a great learning experience for me. Even if the code is
+&lt;em>i n c r e d i b l y&lt;/em> messy. I&amp;rsquo;ll clean it up eventually, I promise.&lt;/p>
+&lt;p>If you really want to know the specifics, I used &lt;a class="link" href="https://bun.sh/" target="_blank" rel="noopener"
+>Bun&lt;/a>,
+&lt;a class="link" href="https://www.typescriptlang.org/" target="_blank" rel="noopener"
+>TypeScript&lt;/a>, &lt;a class="link" href="https://reactjs.org/" target="_blank" rel="noopener"
+>React&lt;/a>,
+&lt;a class="link" href="https://vitejs.dev/" target="_blank" rel="noopener"
+>Vite&lt;/a>, &lt;a class="link" href="https://tailwindcss.com/" target="_blank" rel="noopener"
+>TailwindCSS&lt;/a>,
+&lt;a class="link" href="https://reactrouter.com/" target="_blank" rel="noopener"
+>React Router&lt;/a>, and &lt;a class="link" href="https://ui.shadcn.com/" target="_blank" rel="noopener"
+>shadcn/ui&lt;/a>.
+Actually, I wanna say a HUGE thank you to the people behind &lt;code>shadcn/ui&lt;/code>!
+It&amp;rsquo;s a great library, and it made my life so much easier.&lt;/p>
+&lt;h2 id="where-can-i-find-it">
+&lt;a href="#where-can-i-find-it">#&lt;/a>
+Where can I find it?
+&lt;/h2>&lt;p>You can find the app at &lt;a class="link" href="https://haiiro.moe/rescorer" target="_blank" rel="noopener"
+>https://haiiro.moe/rescorer&lt;/a> and the source code
+over on &lt;a class="link" href="https://github.com/Kex1016/anilist-rescore" target="_blank" rel="noopener"
+>GitHub&lt;/a>. The
+next minor release will include many fixes, including a mobile mode.
+For now, it&amp;rsquo;s desktop only. Sorry!&lt;/p>
+&lt;p>That&amp;rsquo;s all for now! I hope you enjoy the tool, and I&amp;rsquo;ll see you next
+month for another &amp;ldquo;I made a&amp;rdquo; post! &lt;em>(I hope.)&lt;/em>&lt;/p></description></item><item><title>I made a virtual machine for VR games.</title><link>https://haiiro.moe/p/kvm-passthrough-vr/</link><pubDate>Fri, 09 Feb 2024 10:45:00 +0100</pubDate><guid>https://haiiro.moe/p/kvm-passthrough-vr/</guid><description>&lt;h1 id="hello-again">
+&lt;a href="#hello-again">#&lt;/a>
+Hello again!
+&lt;/h1>&lt;p>As the title suggests, I come to you with a small guide to get you started with making your own VM!
+It is by no means a complete guide, as it will only cover what I personally had to go through to make
+things work, but it should be enough for those that have similar specs for their PC.&lt;/p>
+&lt;h2 id="but-why">
+&lt;a href="#but-why">#&lt;/a>
+But why?
+&lt;/h2>&lt;p>A while ago I found out that one of the VR games I own got a major update that looked really promising.
+Problem was, I am running Linux, and it was not working with &lt;a class="link" href="https://github.com/alvr-org/ALVR" target="_blank" rel="noopener"
+>ALVR&lt;/a> and Proton&amp;hellip;
+So, after a relatively long procrastination, I decided to just go for making a VM. Here comes problem number two:
+Steam Link! Since I have a Quest 2, I cannot just plug and play, I have to connect somewhere, and a regular VM
+with the default network just won&amp;rsquo;t do. The Steam app will not detect it! This is where the bridge networks came
+in clutch.&lt;/p>
+&lt;p>&lt;strong>In short:&lt;/strong> I care about my privacy, and I was lazy to dualboot.&lt;/p>
+&lt;p>Anyways, let&amp;rsquo;s get going!&lt;/p>
+&lt;h2 id="the-guide">
+&lt;a href="#the-guide">#&lt;/a>
+The guide.
+&lt;/h2>&lt;p>Like I said at the beginning, this will only cover parts that I personally had to do. &lt;strong>This means there will be
+no mention for NVIDIA!&lt;/strong> The process is roughly the same, except you will have to &lt;a class="link" href="https://github.com/QaidVoid/Complete-Single-GPU-Passthrough?tab=readme-ov-file#vbios-patching" target="_blank" rel="noopener"
+>patch your GPU vBIOS&lt;/a>.&lt;/p>
+&lt;h3 id="setting-up-your-bios-and-grub">
+&lt;a href="#setting-up-your-bios-and-grub">#&lt;/a>
+Setting up your BIOS and GRUB
+&lt;/h3>&lt;p>First thing on our list is to enable all the virtualization tools. Which means, you have to enable &lt;code>Intel VT-d&lt;/code> or &lt;code>AMD-Vi&lt;/code> in your BIOS. &lt;em>If you don&amp;rsquo;t see these options, your computer likely doesn&amp;rsquo;t support virtualization, making the rest of the steps irrelevant.&lt;/em>&lt;/p>
+&lt;p>Then, we&amp;rsquo;ll need to enable IOMMU. To do that, you&amp;rsquo;ll need to edit &lt;code>/etc/default/grub&lt;/code> like so:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-env" data-lang="env">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">GRUB_CMDLINE_LINUX_DEFAULT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;... amd_iommu=on iommu=pt ...&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># ...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>For Intel CPUs, type &lt;code>intel_iommu&lt;/code> instead of &lt;code>amd_iommu&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;p>And now restart your computer. To check if things worked, use the &lt;code>dmesg | grep IOMMU&lt;/code> commands (as root). You should see something like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">[ 0.324086] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[ 0.381785] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="installing-and-setting-up-packages">
+&lt;a href="#installing-and-setting-up-packages">#&lt;/a>
+Installing and setting up packages
+&lt;/h3>&lt;p>Great, you have virtualization enabled, and all your internals are ready to go. Time to set up your packages. I use Arch (btw), but the process is very similar on most systems, provided you don&amp;rsquo;t use something like SELinux, which I will not cover in this guide.&lt;/p>
+&lt;details>
+&lt;summary>&lt;b>Arch Linux&lt;/b>&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">pacman -S qemu libvirt edk2-ovmf virt-manager dnsmasq ebtables
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>&lt;b>Fedora&lt;/b>&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">dnf install @virtualization
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>&lt;b>Ubuntu&lt;/b>&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">apt install qemu-kvm qemu-utils libvirt-daemon-system libvirt-clients bridge-utils virt-manager ovmf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;p>After installing these packages, you have to enable some services:&lt;/p>
+&lt;details>
+&lt;summary>&lt;b>systemd&lt;/b>&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">systemctl &lt;span class="nb">enable&lt;/span> --now libvirtd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>&lt;b>OpenRC&lt;/b>&lt;/summary>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">rc-update add libvirtd default
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rc-service libvirtd start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/details>
+&lt;p>You might need to force start your virtual network as well, you can do that by typing&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo virsh net-start default
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo virsh net-autostart default
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="setting-up-the-guest-os">
+&lt;a href="#setting-up-the-guest-os">#&lt;/a>
+Setting up the guest OS
+&lt;/h3>&lt;p>We&amp;rsquo;re getting closer, it&amp;rsquo;s time to install Windows. Get yourself a Windows ISO. Your first step is to make a new virtual machine using Virtual Machine Manager. Make sure to check &amp;ldquo;Customize configuration before install!&amp;rdquo; This is very important!&lt;/p>
+&lt;p>In the &lt;em>Overview&lt;/em> section, set the VM&amp;rsquo;s chipset to Q35 (likely already the default), and the firmware to UEFI.&lt;/p>
+&lt;p>Then, go to the &lt;em>CPUs&lt;/em> section and set the configuration to host-passthrough (once again, this is likely the default), and set the topology to your liking. I set it to 1 socket, 5 cores and 2 threads for example.&lt;/p>
+&lt;p>Go to the &lt;em>SATA Disk 1&lt;/em> section, and set it to &lt;code>Virtio&lt;/code>. It will change to &amp;ldquo;Virtio Disk 1&amp;rdquo;. &lt;strong>Do the same with your &lt;em>NIC&lt;/em>!&lt;/strong>&lt;/p>
+&lt;p>Download the &lt;a class="link" href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso" target="_blank" rel="noopener"
+>virtio-win&lt;/a> ISO, and attach it as a CDROM device (Add Hardware &amp;gt; Storage &amp;gt; Device Type).&lt;/p>
+&lt;p>You can now hit &amp;ldquo;Begin Installation&amp;rdquo;! Go through the steps just like a normal Windows installation.&lt;/p>
+&lt;h3 id="attaching-your-devices">
+&lt;a href="#attaching-your-devices">#&lt;/a>
+Attaching your devices
+&lt;/h3>&lt;p>After the Windows install is done, delete the &lt;code>Sound ich*&lt;/code> and &lt;code>Channel (spice)&lt;/code> devices, we will not need these anymore. Inside the &lt;em>Display Spice&lt;/em> section, change the type to VNC server, and set the address to &amp;ldquo;All interfaces&amp;rdquo;. We will use this to connect to our VM to install the graphics drivers.&lt;/p>
+&lt;p>Add your GPU and the HDMI Audio PCI devices (Add Hardware &amp;gt; PCI Host Device). You can also add your USB host devices, we will not need them on the host anyways. Add your keyboard and mouse along with any other device you might need. I added my Bluetooth dongle for example. Your list should look something like this:&lt;/p>
+&lt;p>&lt;img src="https://haiiro.moe/p/kvm-passthrough-vr/img/09_114922.png"
+width="184"
+height="637"
+srcset="https://haiiro.moe/p/kvm-passthrough-vr/img/09_114922_huaccc3e8d2b4d1917083e74c870ecacc3_41203_480x0_resize_box_3.png 480w, https://haiiro.moe/p/kvm-passthrough-vr/img/09_114922_huaccc3e8d2b4d1917083e74c870ecacc3_41203_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="The VM&amp;rsquo;s devices"
+class="gallery-image"
+data-flex-grow="28"
+data-flex-basis="69px"
+>&lt;/p>
+&lt;h3 id="making-the-hooks">
+&lt;a href="#making-the-hooks">#&lt;/a>
+Making the hooks
+&lt;/h3>&lt;p>The fun part! To use our GPU for this VM, we have to unload everything that uses the GPU, along with the drivers.&lt;/p>
+&lt;h4 id="libvirt-hook">
+&lt;a href="#libvirt-hook">#&lt;/a>
+Libvirt hook
+&lt;/h4>&lt;p>This is needed for libvirt to recognize our other hooks.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir /etc/libvirt/hooks
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo touch /etc/libvirt/hooks/qemu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/libvirt/hooks/qemu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The contents of &lt;code>/etc/libvirt/hooks/qemu&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">GUEST_NAME&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$1&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">HOOK_NAME&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$2&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">STATE_NAME&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$3&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">MISC&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="p">@:&lt;/span>&lt;span class="nv">4&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">BASEDIR&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>dirname &lt;span class="nv">$0&lt;/span>&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">HOOKPATH&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$BASEDIR&lt;/span>&lt;span class="s2">/qemu.d/&lt;/span>&lt;span class="nv">$GUEST_NAME&lt;/span>&lt;span class="s2">/&lt;/span>&lt;span class="nv">$HOOK_NAME&lt;/span>&lt;span class="s2">/&lt;/span>&lt;span class="nv">$STATE_NAME&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">set&lt;/span> -e &lt;span class="c1"># If a script exits with an error, we should as well.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="o">[&lt;/span> -f &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOOKPATH&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">eval&lt;/span> &lt;span class="se">\&amp;#34;&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOOKPATH&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="se">\&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$@&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">elif&lt;/span> &lt;span class="o">[&lt;/span> -d &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOOKPATH&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="o">]&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">while&lt;/span> &lt;span class="nb">read&lt;/span> file&lt;span class="p">;&lt;/span> &lt;span class="k">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">eval&lt;/span> &lt;span class="se">\&amp;#34;&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$file&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="se">\&amp;#34;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$@&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">done&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&amp;lt;&lt;/span> &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="k">$(&lt;/span>find -L &lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="nv">$HOOKPATH&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> -maxdepth &lt;span class="m">1&lt;/span> -type f -executable -print&lt;span class="p">;&lt;/span>&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="the-start-hook">
+&lt;a href="#the-start-hook">#&lt;/a>
+The start hook
+&lt;/h4>&lt;p>This is the script that gets executed when you start the VM. &lt;strong>Make sure to replace &lt;code>win10&lt;/code> with your own VM&amp;rsquo;s name!&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir --parents /etc/libvirt/hooks/qemu.d/win10/prepare/begin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo touch /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The contents of &lt;code>/etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="nb">set&lt;/span> -x
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Stop KDE Plasma&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Comment this out if you&amp;#39;re not using Plasma!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl --user -M michiru@ stop plasma*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Stop display manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl stop display-manager
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Unbind VTconsoles: might not be needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">0&lt;/span> &amp;gt; /sys/class/vtconsole/vtcon0/bind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">0&lt;/span> &amp;gt; /sys/class/vtconsole/vtcon1/bind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Unbind EFI Framebuffer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> efi-framebuffer.0 &amp;gt; /sys/bus/platform/drivers/efi-framebuffer/unbind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Unload AMD kernel module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modprobe -r amdgpu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Detach GPU devices from host&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Use your GPU and HDMI Audio PCI host device&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># You can check their addresses in virt-manager!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-detach pci_0000_03_00_0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-detach pci_0000_03_00_1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-detach pci_0000_0b_00_6 &lt;span class="c1"># My audio controller&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Load vfio module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modprobe vfio-pci
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="the-release-hook">
+&lt;a href="#the-release-hook">#&lt;/a>
+The release hook
+&lt;/h4>&lt;p>This is the script that gets executed when you stop the VM. &lt;strong>Make sure to replace &lt;code>win10&lt;/code> with your own VM&amp;rsquo;s name!&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir --parents /etc/libvirt/hooks/qemu.d/win10/release/end
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo touch /etc/libvirt/hooks/qemu.d/win10/release/end/stop.sh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chmod +x /etc/libvirt/hooks/qemu.d/win10/release/end/stop.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The contents of &lt;code>/etc/libvirt/hooks/qemu.d/win10/release/end/stop.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="nb">set&lt;/span> -x
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Reattach GPU devices to host&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Use your GPU and HDMI Audio PCI host device&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># You can check their addresses in virt-manager!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-reattach pci_0000_03_00_0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-reattach pci_0000_03_00_1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">virsh nodedev-reattach pci_0000_0b_00_6 &lt;span class="c1"># My audio controller&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Unload vfio module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modprobe -r vfio-pci
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Load AMD kernel module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">modprobe amdgpu
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Rebind framebuffer to host&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;efi-framebuffer.0&amp;#34;&lt;/span> &amp;gt; /sys/bus/platform/drivers/efi-framebuffer/bind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Bind VTconsoles: might not be needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">1&lt;/span> &amp;gt; /sys/class/vtconsole/vtcon0/bind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="m">1&lt;/span> &amp;gt; /sys/class/vtconsole/vtcon1/bind
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Restart Display Manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl start display-manager
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="testing-the-scripts">
+&lt;a href="#testing-the-scripts">#&lt;/a>
+Testing the scripts
+&lt;/h4>&lt;p>This is an optional step, but if these scripts don&amp;rsquo;t work you&amp;rsquo;ll either be stuck on a black screen until you reboot or your VM just won&amp;rsquo;t boot. Here&amp;rsquo;s how you test them:&lt;/p>
+&lt;ul>
+&lt;li>Enable SSH (&lt;code>systemctl enable --now sshd&lt;/code>)&lt;/li>
+&lt;li>Get a second computer and connect to your host
+&lt;ul>
+&lt;li>To get your host computer&amp;rsquo;s IP, you can do &lt;code>ip a&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ssh username@youripaddress&lt;/code>&lt;/li>
+&lt;li>Execute the start/stop scripts
+&lt;ul>
+&lt;li>&lt;code>sudo /etc/libvirt/hooks/qemu.d/win10/release/end/stop.sh&lt;/code>&lt;/li>
+&lt;li>&lt;code>sudo /etc/libvirt/hooks/qemu.d/win10/prepare/begin/start.sh&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="audio-passthrough">
+&lt;a href="#audio-passthrough">#&lt;/a>
+Audio passthrough
+&lt;/h3>&lt;p>Since we&amp;rsquo;re not going to need the host computer&amp;rsquo;s audio, we can just pass the PCI device through. Search for something like &amp;ldquo;HD Audio Controller&amp;rdquo;, or if you have a dedicated card for it, add that one. You could also use &lt;a class="link" href="https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Passing_audio_from_virtual_machine_to_host_via_Scream" target="_blank" rel="noopener"
+>Scream&lt;/a>, or &lt;a class="link" href="https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF#Passing_audio_from_virtual_machine_to_host_via_PipeWire_directly" target="_blank" rel="noopener"
+>PipeWire&lt;/a>. If you pass it directly, make sure to edit the part marked by &amp;ldquo;My audio controller&amp;rdquo;. Otherwise, comment it out.&lt;/p>
+&lt;h3 id="virtualization-detection">
+&lt;a href="#virtualization-detection">#&lt;/a>
+Virtualization detection
+&lt;/h3>&lt;p>For some reason cards don&amp;rsquo;t like it whenyou run them in a VM. Here&amp;rsquo;s how you get around this. Inside your VM&amp;rsquo;s settings, go to the &lt;em>Overview&lt;/em> section, switch to the XML tab, and edit the VM like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;features&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;hyperv&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;vendor_id&lt;/span> &lt;span class="na">state=&lt;/span>&lt;span class="s">&amp;#39;on&amp;#39;&lt;/span> &lt;span class="na">value=&lt;/span>&lt;span class="s">&amp;#39;anything&amp;#39;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/hyperv&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;kvm&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;hidden&lt;/span> &lt;span class="na">state=&lt;/span>&lt;span class="s">&amp;#39;on&amp;#39;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;/kvm&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/features&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;em>Hiding the KVM CPU isn&amp;rsquo;t necessary on AMD, but I added it just to be sure.&lt;/em>&lt;/p>
+&lt;h3 id="getting-the-gpu-vbios">
+&lt;a href="#getting-the-gpu-vbios">#&lt;/a>
+Getting the GPU vBIOS
+&lt;/h3>&lt;p>You could just dump it yourself if you know how to, but there are simpler ways, like &lt;a class="link" href="https://www.techpowerup.com/vgabios" target="_blank" rel="noopener"
+>just downloading the one you need for your card&amp;hellip;&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Make sure to get your card&amp;rsquo;s ROM! Check the brand, the vendor and the model!!&lt;/p>
+&lt;/blockquote>
+&lt;p>After you got the vBIOS, name it something simple like &lt;code>gpu.rom&lt;/code>, and move it to a folder where libvirt can see it. I did this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-sh" data-lang="sh">&lt;span class="line">&lt;span class="cl">sudo mkdir --parents /var/lib/libvirt/vbios
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo mv /path/to/gpu.rom /var/lib/libvirt/vbios
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chown &lt;span class="k">$(&lt;/span>id -u&lt;span class="k">)&lt;/span>:&lt;span class="k">$(&lt;/span>id -g&lt;span class="k">)&lt;/span> -R /var/lib/libvirt/vbios
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo chmod &lt;span class="m">777&lt;/span> -R /var/lib/libvirt/vbios
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>I got a strange error saying it can&amp;rsquo;t find the &lt;code>gpu.rom&lt;/code> file when it had rwx permissions for everything, so I gave rwx permissions to everything in the folder, alongside the folder itself.&lt;/p>
+&lt;h3 id="giving-the-vbios-to-your-vm">
+&lt;a href="#giving-the-vbios-to-your-vm">#&lt;/a>
+Giving the vBIOS to your VM
+&lt;/h3>&lt;p>In your VM settings, go to your GPU&amp;rsquo;s sections, the XML tab, and add this section to each one (the GPU and the HDMI audio controller):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;hostdev&lt;/span> &lt;span class="na">mode=&lt;/span>&lt;span class="s">&amp;#34;subsystem&amp;#34;&lt;/span> &lt;span class="na">type=&lt;/span>&lt;span class="s">&amp;#34;pci&amp;#34;&lt;/span> &lt;span class="na">managed=&lt;/span>&lt;span class="s">&amp;#34;yes&amp;#34;&lt;/span>&lt;span class="nt">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;rom&lt;/span> &lt;span class="na">file=&lt;/span>&lt;span class="s">&amp;#34;/var/lib/libvirt/vbios/gpu.rom&amp;#34;&lt;/span>&lt;span class="nt">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ...
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/hostdev&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Of course, change the path in &lt;code>file=&amp;quot;...&amp;quot;&lt;/code> to your path.&lt;/p>
+&lt;h3 id="the-bridge-network">
+&lt;a href="#the-bridge-network">#&lt;/a>
+The bridge network
+&lt;/h3>&lt;p>Here&amp;rsquo;s the part I needed to fix Steam Link not working. We need the VM to be on the same network, so we&amp;rsquo;ll need to make a bridge network. You will need NetworkManager for this.&lt;/p>
+&lt;h4 id="using-plasmas-system-settings">
+&lt;a href="#using-plasmas-system-settings">#&lt;/a>
+Using Plasma&amp;rsquo;s System Settings
+&lt;/h4>&lt;p>Inside System Settings, go to the Network category and then Connections. Click on the &lt;code>+&lt;/code> sign to add a new connection, and select Bridge under the &amp;ldquo;Virtual connections&amp;rdquo; category. You can name the connection anything you want. &lt;strong>Give a name to the interface, this will be used for the VM.&lt;/strong> You will have to add an Ethernet connection to the bridged connections. After you added it, hit save. Now, delete your original Wired Ethernet connection. You won&amp;rsquo;t need this anymore, as the bridge connection will handle everything.&lt;/p>
+&lt;p>&lt;strong>Do not worry if you don&amp;rsquo;t have internet for a while after setting this up. If you did it right, it should take a while, but the new connection will set itself up again.&lt;/strong>&lt;/p>
+&lt;h4 id="using-nmtui">
+&lt;a href="#using-nmtui">#&lt;/a>
+Using &lt;code>nmtui&lt;/code>
+&lt;/h4>&lt;p>The process is the same, except it&amp;rsquo;s in the terminal using NetworkManager&amp;rsquo;s built-in TUI tool. The notable difference is in the main menu. To add a connection, you have to go into the &amp;ldquo;Edit a connection&amp;rdquo; menu. There are no categories, you just have to select &amp;ldquo;Bridge&amp;rdquo;.&lt;/p>
+&lt;h4 id="the-result">
+&lt;a href="#the-result">#&lt;/a>
+The result
+&lt;/h4>&lt;p>&lt;img src="https://haiiro.moe/p/kvm-passthrough-vr/img/09_131637.png"
+width="845"
+height="845"
+srcset="https://haiiro.moe/p/kvm-passthrough-vr/img/09_131637_hudc034663fcfc0933734d4de5fa2eb834_47472_480x0_resize_box_3.png 480w, https://haiiro.moe/p/kvm-passthrough-vr/img/09_131637_hudc034663fcfc0933734d4de5fa2eb834_47472_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="The final result in Plasma&amp;rsquo;s System Settings"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+>&lt;/p>
+&lt;h4 id="setting-the-vms-network">
+&lt;a href="#setting-the-vms-network">#&lt;/a>
+Setting the VM&amp;rsquo;s network
+&lt;/h4>&lt;p>Going back to our VM, go to the &lt;em>NIC&lt;/em> section, and change the Network source to &amp;ldquo;Bridge device&amp;hellip;&amp;rdquo;. The device name should be automatically filled in, but if it&amp;rsquo;s not, just put in the name you gave to your interface.&lt;/p>
+&lt;h3 id="thats-it">
+&lt;a href="#thats-it">#&lt;/a>
+That&amp;rsquo;s it!
+&lt;/h3>&lt;p>You&amp;rsquo;re done! If any issues arise, comment them and I&amp;rsquo;ll do my best to resolve them and edit the post accordingly. Have fun with your new VM!&lt;/p>
+&lt;h2 id="sources">
+&lt;a href="#sources">#&lt;/a>
+Sources
+&lt;/h2>&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://www.techpowerup.com/vgabios" target="_blank" rel="noopener"
+>TechPowerUp VGA BIOS collection&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>GitHub/Gitlab&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://github.com/QaidVoid/Complete-Single-GPU-Passthrough" target="_blank" rel="noopener"
+>QaidVoid/Complete-Single-GPU-Passthrough&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/martinopiaggi/Single-GPU-Passthrough-for-Dummies" target="_blank" rel="noopener"
+>martinopiaggi/Single-GPU-Passthrough-for-Dummies&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/home" target="_blank" rel="noopener"
+>risingprismtv/single-gpu-passthrough&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>YouTube&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a class="link" href="https://www.youtube.com/watch?v=53ZO2pKS4i0" target="_blank" rel="noopener"
+>Coodos - Windows 11 KVM Single GPU Passthrough&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://www.youtube.com/watch?v=DYpaX4BnNlg" target="_blank" rel="noopener"
+>Abstract programmer - qemu/kvm bridge and NAT networking&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>I made a site for a gameshow!</title><link>https://haiiro.moe/p/morfin-gameshow/</link><pubDate>Sun, 17 Dec 2023 00:54:59 +0100</pubDate><guid>https://haiiro.moe/p/morfin-gameshow/</guid><description>&lt;h1 id="hello-again">
+&lt;a href="#hello-again">#&lt;/a>
+Hello again!
+&lt;/h1>&lt;p>It wasn&amp;rsquo;t as long as I imagined between my last post and this one. Yeah, so this happened. Around a week or two ago I got contacted by a friend about a gameshow he&amp;rsquo;s hosting as an event on a Discord server we&amp;rsquo;re part of. He asked me if I could maybe make a website to display the questions he&amp;rsquo;s going to ask, along with the answers. I agreed after I was done with my exams, and made a dead simple site. Seriously, there&amp;rsquo;s nothing special about it.&lt;/p>
+&lt;p>I used &lt;a class="link" href="https://react.dev/" target="_blank" rel="noopener"
+>React&lt;/a> with &lt;a class="link" href="https://vitejs.dev/" target="_blank" rel="noopener"
+>Vite&lt;/a>, &lt;a class="link" href="https://www.typescriptlang.org/" target="_blank" rel="noopener"
+>Typescript&lt;/a> and &lt;a class="link" href="https://tailwindcss.com/" target="_blank" rel="noopener"
+>Tailwind CSS&lt;/a> for the main frameworks, and added &lt;a class="link" href="https://github.com/zaaack/nstate" target="_blank" rel="noopener"
+>nstate&lt;/a> for easy state management, this way I didn&amp;rsquo;t have to do anything fancy just to store some basic data. Like I said, the site is really simple, all it does is display all the questions the person imports in a random order:&lt;/p>
+&lt;video controls style="max-width:100%;">
+&lt;source src="https://safe.haiiro.moe/TMU2yeyvt55t.mp4" type="video/mp4">
+&lt;/video>
+&lt;p>That&amp;rsquo;s it, really. It&amp;rsquo;s small like I said, but I think I will definitely put up all of my really small projects, since who knows who might find them, and maybe even make use of it. Small projects like this are keeping me interested and excited about coding, so I will definitely continue them. Check this project out on &lt;a class="link" href="https://github.com/Kex1016/morfin-gameshow" target="_blank" rel="noopener"
+>GitHub&lt;/a>!&lt;/p>
+&lt;p>&lt;em>Yes, the title is Gayshow, and yes, I did not replace the default Vite favicon. It&amp;rsquo;s not what matters!! (Maybe next commit&amp;hellip;)&lt;/em>&lt;/p></description></item><item><title>Hello World</title><link>https://haiiro.moe/p/hello-world/</link><pubDate>Sun, 19 Nov 2023 10:30:00 +0100</pubDate><guid>https://haiiro.moe/p/hello-world/</guid><description>&lt;img src="https://haiiro.moe/p/hello-world/cover.jpg" alt="Featured image of post Hello World" />&lt;h1 id="hello-world">
+&lt;a href="#hello-world">#&lt;/a>
+Hello World.
+&lt;/h1>&lt;p>A new site! Woah!&lt;/p>
+&lt;p>Yeah, I decided to adopt Hugo. It&amp;rsquo;s easy to use, and I can write
+about things that might interest me. I&amp;rsquo;m not quite sure what it
+will be, and I might not even write anything at all. This is just
+something that&amp;rsquo;s nice to have. I will most likely only do some posts
+about some random code I wrote, or a bigger project I work on.
+We&amp;rsquo;ll see.&lt;/p>
+&lt;p>The theme is based on the &lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+>Stack&lt;/a> theme.
+I modified it to fit my black and white aesthetic.&lt;/p></description></item><item><title>Archives</title><link>https://haiiro.moe/archives/</link><pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate><guid>https://haiiro.moe/archives/</guid><description/></item><item><title>My Links</title><link>https://haiiro.moe/my-links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haiiro.moe/my-links/</guid><description/></item><item><title>Search</title><link>https://haiiro.moe/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://haiiro.moe/search/</guid><description/></item></channel></rss>

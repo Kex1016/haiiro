@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typescript on Haiiro</title><link>https://haiiro.moe/tags/typescript/</link><description>Recent content in Typescript on Haiiro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 30 Mar 2024 18:50:00 +0100</lastBuildDate><atom:link href="https://haiiro.moe/tags/typescript/index.xml" rel="self" type="application/rss+xml"/><item><title>I made a tool to rescore your AL library!</title><link>https://haiiro.moe/p/al-rescorer/</link><pubDate>Sat, 30 Mar 2024 18:50:00 +0100</pubDate><guid>https://haiiro.moe/p/al-rescorer/</guid><description>&lt;h1 id="hi">
+&lt;a href="#hi">#&lt;/a>
+Hi!
+&lt;/h1>&lt;p>Here&amp;rsquo;s this month&amp;rsquo;s &amp;ldquo;I made a&amp;rdquo; post! This time, I made a tool to
+quickly re-score your AniList library! It&amp;rsquo;s my first go at publishing
+a full web app, and I&amp;rsquo;m honestly pretty happy with how it turned out.&lt;/p>
+&lt;h2 id="what-does-it-do">
+&lt;a href="#what-does-it-do">#&lt;/a>
+What does it do?
+&lt;/h2>&lt;p>It&amp;rsquo;s simple:&lt;/p>
+&lt;ul>
+&lt;li>You log in with your AniList account&lt;/li>
+&lt;li>You go to the list view, and select an item&lt;/li>
+&lt;li>You edit the item directly, or go to the bulk editor to edit multiple items at once&lt;/li>
+&lt;li>You save your changes&lt;/li>
+&lt;li>Done!&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-does-it-work">
+&lt;a href="#how-does-it-work">#&lt;/a>
+How does it work?
+&lt;/h2>&lt;p>The app uses the AniList API to fetch your library data, and then
+sends the changes back to the API. It&amp;rsquo;s a pretty simple setup, but
+it&amp;rsquo;s been a great learning experience for me. Even if the code is
+&lt;em>i n c r e d i b l y&lt;/em> messy. I&amp;rsquo;ll clean it up eventually, I promise.&lt;/p>
+&lt;p>If you really want to know the specifics, I used &lt;a class="link" href="https://bun.sh/" target="_blank" rel="noopener"
+>Bun&lt;/a>,
+&lt;a class="link" href="https://www.typescriptlang.org/" target="_blank" rel="noopener"
+>TypeScript&lt;/a>, &lt;a class="link" href="https://reactjs.org/" target="_blank" rel="noopener"
+>React&lt;/a>,
+&lt;a class="link" href="https://vitejs.dev/" target="_blank" rel="noopener"
+>Vite&lt;/a>, &lt;a class="link" href="https://tailwindcss.com/" target="_blank" rel="noopener"
+>TailwindCSS&lt;/a>,
+&lt;a class="link" href="https://reactrouter.com/" target="_blank" rel="noopener"
+>React Router&lt;/a>, and &lt;a class="link" href="https://ui.shadcn.com/" target="_blank" rel="noopener"
+>shadcn/ui&lt;/a>.
+Actually, I wanna say a HUGE thank you to the people behind &lt;code>shadcn/ui&lt;/code>!
+It&amp;rsquo;s a great library, and it made my life so much easier.&lt;/p>
+&lt;h2 id="where-can-i-find-it">
+&lt;a href="#where-can-i-find-it">#&lt;/a>
+Where can I find it?
+&lt;/h2>&lt;p>You can find the app at &lt;a class="link" href="https://haiiro.moe/rescorer" target="_blank" rel="noopener"
+>https://haiiro.moe/rescorer&lt;/a> and the source code
+over on &lt;a class="link" href="https://github.com/Kex1016/anilist-rescore" target="_blank" rel="noopener"
+>GitHub&lt;/a>. The
+next minor release will include many fixes, including a mobile mode.
+For now, it&amp;rsquo;s desktop only. Sorry!&lt;/p>
+&lt;p>That&amp;rsquo;s all for now! I hope you enjoy the tool, and I&amp;rsquo;ll see you next
+month for another &amp;ldquo;I made a&amp;rdquo; post! &lt;em>(I hope.)&lt;/em>&lt;/p></description></item><item><title>I made a site for a gameshow!</title><link>https://haiiro.moe/p/morfin-gameshow/</link><pubDate>Sun, 17 Dec 2023 00:54:59 +0100</pubDate><guid>https://haiiro.moe/p/morfin-gameshow/</guid><description>&lt;h1 id="hello-again">
+&lt;a href="#hello-again">#&lt;/a>
+Hello again!
+&lt;/h1>&lt;p>It wasn&amp;rsquo;t as long as I imagined between my last post and this one. Yeah, so this happened. Around a week or two ago I got contacted by a friend about a gameshow he&amp;rsquo;s hosting as an event on a Discord server we&amp;rsquo;re part of. He asked me if I could maybe make a website to display the questions he&amp;rsquo;s going to ask, along with the answers. I agreed after I was done with my exams, and made a dead simple site. Seriously, there&amp;rsquo;s nothing special about it.&lt;/p>
+&lt;p>I used &lt;a class="link" href="https://react.dev/" target="_blank" rel="noopener"
+>React&lt;/a> with &lt;a class="link" href="https://vitejs.dev/" target="_blank" rel="noopener"
+>Vite&lt;/a>, &lt;a class="link" href="https://www.typescriptlang.org/" target="_blank" rel="noopener"
+>Typescript&lt;/a> and &lt;a class="link" href="https://tailwindcss.com/" target="_blank" rel="noopener"
+>Tailwind CSS&lt;/a> for the main frameworks, and added &lt;a class="link" href="https://github.com/zaaack/nstate" target="_blank" rel="noopener"
+>nstate&lt;/a> for easy state management, this way I didn&amp;rsquo;t have to do anything fancy just to store some basic data. Like I said, the site is really simple, all it does is display all the questions the person imports in a random order:&lt;/p>
+&lt;video controls style="max-width:100%;">
+&lt;source src="https://safe.haiiro.moe/TMU2yeyvt55t.mp4" type="video/mp4">
+&lt;/video>
+&lt;p>That&amp;rsquo;s it, really. It&amp;rsquo;s small like I said, but I think I will definitely put up all of my really small projects, since who knows who might find them, and maybe even make use of it. Small projects like this are keeping me interested and excited about coding, so I will definitely continue them. Check this project out on &lt;a class="link" href="https://github.com/Kex1016/morfin-gameshow" target="_blank" rel="noopener"
+>GitHub&lt;/a>!&lt;/p>
+&lt;p>&lt;em>Yes, the title is Gayshow, and yes, I did not replace the default Vite favicon. It&amp;rsquo;s not what matters!! (Maybe next commit&amp;hellip;)&lt;/em>&lt;/p></description></item></channel></rss>

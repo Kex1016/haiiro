@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>First Post on Haiiro</title><link>https://haiiro.moe/tags/first-post/</link><description>Recent content in First Post on Haiiro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 19 Nov 2023 10:30:00 +0100</lastBuildDate><atom:link href="https://haiiro.moe/tags/first-post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://haiiro.moe/p/hello-world/</link><pubDate>Sun, 19 Nov 2023 10:30:00 +0100</pubDate><guid>https://haiiro.moe/p/hello-world/</guid><description>&lt;img src="https://haiiro.moe/p/hello-world/cover.jpg" alt="Featured image of post Hello World" />&lt;h1 id="hello-world">
+&lt;a href="#hello-world">#&lt;/a>
+Hello World.
+&lt;/h1>&lt;p>A new site! Woah!&lt;/p>
+&lt;p>Yeah, I decided to adopt Hugo. It&amp;rsquo;s easy to use, and I can write
+about things that might interest me. I&amp;rsquo;m not quite sure what it
+will be, and I might not even write anything at all. This is just
+something that&amp;rsquo;s nice to have. I will most likely only do some posts
+about some random code I wrote, or a bigger project I work on.
+We&amp;rsquo;ll see.&lt;/p>
+&lt;p>The theme is based on the &lt;a class="link" href="https://stack.jimmycai.com/" target="_blank" rel="noopener"
+>Stack&lt;/a> theme.
+I modified it to fit my black and white aesthetic.&lt;/p></description></item></channel></rss>
