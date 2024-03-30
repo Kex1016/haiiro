@@ -35,8 +35,9 @@ sends the changes back to the API. It's a pretty simple setup, but
 it's been a great learning experience for me. Even if the code is
 *i n c r e d i b l y* messy. I'll clean it up eventually, I promise.
 
-If you really want to know the specifics, I used [TypeScript](https://www.typescriptlang.org/),
-[React](https://reactjs.org/), [Vite](https://vitejs.dev/), [TailwindCSS](https://tailwindcss.com/),
+If you really want to know the specifics, I used [Bun](https://bun.sh/),
+[TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/),
+ [Vite](https://vitejs.dev/), [TailwindCSS](https://tailwindcss.com/),
 [React Router](https://reactrouter.com/), and [shadcn/ui](https://ui.shadcn.com/).
 Actually, I wanna say a HUGE thank you to the people behind `shadcn/ui`!
 It's a great library, and it made my life so much easier.
