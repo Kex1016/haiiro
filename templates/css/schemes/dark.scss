@@ -1,0 +1,53 @@
+@import "../variables";
+
+// Dark mode
+// Only colors are defined here.
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-050: #120f12;
+    --primary-100: #1d181d;
+    --primary-200: #2c242c;
+    --primary-300: #4f414e;
+    --primary-400: #6f5b6e;
+    --primary-500: #91768f;
+    --primary-600: #b696b4;
+    --primary-700: #d8c6d7;
+    --primary-800: #e3d6e2;
+    --primary-900: #ede5ec;
+    --primary-950: #f6f2f6;
+    --secondary-050: #111008;
+    --secondary-100: #1c1a0c;
+    --secondary-200: #2b2713;
+    --secondary-300: #4c4622;
+    --secondary-400: #6b622f;
+    --secondary-500: #8b7f3d;
+    --secondary-600: #afa14d;
+    --secondary-700: #dccd74;
+    --secondary-800: #e6db9c;
+    --secondary-900: #efe8c0;
+    --secondary-950: #f7f4e1;
+    --tertiary-050: #130f0e;
+    --tertiary-100: #1f1816;
+    --tertiary-200: #2e2522;
+    --tertiary-300: #53413d;
+    --tertiary-400: #755c55;
+    --tertiary-500: #917973;
+    --tertiary-600: #ad9c98;
+    --tertiary-700: #d3cac7;
+    --tertiary-800: #dfd9d7;
+    --tertiary-900: #ebe6e5;
+    --tertiary-950: #f5f3f3;
+    --neutral-050: #101010;
+    --neutral-100: #191919;
+    --neutral-200: #272727;
+    --neutral-300: #454545;
+    --neutral-400: #616161;
+    --neutral-500: #7e7e7e;
+    --neutral-600: #a0a0a0;
+    --neutral-700: #cbcbcb;
+    --neutral-800: #dadada;
+    --neutral-900: #e7e7e7;
+    --neutral-950: #f3f3f3;
+  }
+}

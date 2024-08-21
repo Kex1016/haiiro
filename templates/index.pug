@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    include includes/head.pug
+    body
+        div.container.display.flex-col
+            h1 haiiro
+            p A simple blog for a simple person.
+            div#nav.home
+                div.links.container
+                    a.link(href="/posts") posts
+                    a.link(href="/contact") contact
+                    a.link(href="/about") about
+        include includes/footer.pug

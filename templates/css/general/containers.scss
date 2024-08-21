@@ -1,0 +1,86 @@
+// Containers
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0 120px;
+  }
+}
+
+// A box that centers its content vertically and horizontally.
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  padding: 20px;
+  background-color: var(--neutral-100);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+  display: flex;
+  gap: 20px;
+}
+
+@for $i from 1 through 12 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+$items: (
+  'start': flex-start,
+  'end': flex-end,
+  'center': center,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+);
+
+@each $key, $value in $items {
+  .justify-#{$key} {
+    justify-content: $value;
+  }
+
+  .items-#{$key} {
+    align-items: $value;
+  }
+}

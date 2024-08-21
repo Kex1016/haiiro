@@ -1,0 +1,56 @@
+@import "../variables";
+
+// Navigation
+
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  &.home {
+    position: static;
+    margin-top: 20px;
+
+    .links {
+      padding: 0;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--neutral-050);
+    border: 3px solid var(--neutral-900);
+    width: fit-content;
+    margin: 10px auto 0 auto;
+    text-align: center;
+    padding: 0 5px;
+
+    .link {
+      text-decoration: 1px solid transparent underline;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      width: 12ch;
+
+      &:hover {
+        background-color: var(--neutral-900);
+        color: var(--neutral-050);
+      }
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.2s ease-in-out;
+    }
+  }
+}
