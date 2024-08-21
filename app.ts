@@ -10,17 +10,14 @@ import Markdown from 'markdown-it';
 
 const Md = new Markdown();
 
-// Defining the paths
 const inputPath = path.join(__dirname, 'site');
 const outputPath = path.join(__dirname, 'dist');
 const templatePath = path.join(__dirname, 'templates');
 
-// Creating the output directory if it doesn't exist
 if (!fs.existsSync(outputPath)) {
     fs.mkdirSync(outputPath);
 }
 
-// The recursive function that looks through the input directory
 async function processDirectory(directory: string) {
     const files = fs.readdirSync(directory);
     for (const file of files) {
@@ -33,15 +30,12 @@ async function processDirectory(directory: string) {
     }
 }
 
-// The function that processes a file
 async function processFile(filePath: string) { // TODO
     console.log("Processing file:", filePath);
 }
 
-// For starters, let's just compile a template.
+// For starters, let's just compile the index.
 const indexTemplate = Pug.compileFile(path.join(templatePath, 'index.pug'), {pretty: true});
-
-// Write the compiled files to the output directory
 fs.writeFileSync(path.join(outputPath, 'index.html'), indexTemplate({
     title: 'Hello, World!',
     content: Md.render('# Hello, World!')
