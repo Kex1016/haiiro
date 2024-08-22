@@ -13,4 +13,5 @@ body {
   padding: 0;
   color: var(--neutral-800);
   background-color: var(--neutral-050);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
