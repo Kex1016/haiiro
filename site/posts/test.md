@@ -12,8 +12,6 @@ tags:
 
 WOAH!!!!
 
-
-
-
-
 WOW!!!
+
+I have another paragraph now
