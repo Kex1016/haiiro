@@ -1,13 +1,12 @@
-include includes/head.pug
-body
-    include includes/nav.pug
+extends includes/head
+block content
     .container.posts
         if posts.length === 0
             h1.text-center No posts yet!
             a.back.text-center.w-full(href="/") < Go back home.
         else
             each post in posts
-                .box.post-card
+                article.box.post-card
                     if post.image
                         .image
                             a(href=`/posts/${post.slug}`)
@@ -22,4 +21,3 @@ body
                             if post.description
                                 h2.description= post.description
                             p.date= post.date
-    include includes/footer.pug

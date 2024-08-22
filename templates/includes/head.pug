@@ -21,6 +21,15 @@ html(lang="en")
         link(rel="icon", type="image/png", href="/images/favicon.png")
         // Other links
         link(rel="canonical", href=`${canonical}`)
+        // Fonts
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding:wght@400;700&display=swap")
         // CSS
         style
-            include:scss ../css/style.scss
+            include:scss(minify) ../css/style.scss
+    body
+        unless currentPage === 'home'
+            include ../includes/nav.pug
+        block content
+        include ../includes/footer.pug

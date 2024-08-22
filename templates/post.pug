@@ -1,6 +1,5 @@
-include includes/head.pug
-body
-    include includes/nav.pug
+extends includes/head
+block content
     .container.post
         if post.type === 'post'
             a(href="/posts").back < Back to posts
@@ -20,4 +19,3 @@ body
                     h2.description= post.description
                 p.date= post.date
         .content!= post.content
-    include includes/footer.pug

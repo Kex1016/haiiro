@@ -1,5 +1,5 @@
-include includes/head.pug
-body
+extends includes/head
+block content
     div.container.display.flex-col
         h1 haiiro
         p#quotes
@@ -8,7 +8,6 @@ body
                 a.link(href="/posts") posts
                 a.link(href="/contact") contact
                 a.link(href="/about") about
-    include includes/footer.pug
     script.
         const quotes = [
             `Make your own space, be creative :D`,
