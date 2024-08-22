@@ -1,6 +1,6 @@
 div#footer.my-10
     div.container.text-center
-        p Made with ❤️.
+        p Made with ❤️ and lots of duct tape.
 script#matomo.
     var _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
@@ -15,5 +15,11 @@ script#matomo.
         g.src = u + 'matomo.js';
         s.parentNode.insertBefore(g, s);
     })();
+script#trailslash.
+    document.querySelectorAll('a').forEach(link => {
+        if ((link.href.startsWith("/") || link.href.startsWith('http')) && !link.href.endsWith('/')) {
+            link.href += '/';
+        }
+    });
 script#highlight(src="/highlight/highlight.min.js")
 script hljs.highlightAll();
