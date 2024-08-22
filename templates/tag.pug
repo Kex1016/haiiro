@@ -1,0 +1,24 @@
+extends includes/head
+block content
+    .container.posts
+        if posts.length === 0
+            h1.text-center No posts yet!
+            a.back.text-center.w-full(href="/") < Go back home.
+        else
+            h1.text-center.mb-3 Posts tagged with #{tag}
+            each post in posts
+                article.box.post-card
+                    if post.image
+                        .image
+                            a(href=`/posts/${post.slug}`)
+                                img(src=`${post.image}`, alt=post.title).mx-auto
+                    .header
+                        if post.tags
+                            .tags
+                                each tag in post.tags
+                                    a(href=`/tags/${tag}`).tag= tag
+                        a(href=`/posts/${post.slug}`)
+                            h1.title= post.title
+                            if post.description
+                                h2.description= post.description
+                            p.date= post.date

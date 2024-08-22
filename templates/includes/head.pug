@@ -25,6 +25,12 @@ html(lang="en")
         link(rel="preconnect", href="https://fonts.googleapis.com")
         link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding:wght@400;700&display=swap")
+        // Tags
+        if post
+            if post.tags
+                meta(name="keywords", content=`blog, simple, creative, personal, haiiro, cakes, cakeswastaken, ${post.tags.join(', ')}`)
+        else
+            meta(name="keywords", content="blog, simple, creative, personal, haiiro, cakes, cakeswastaken")
         // CSS
         style
             include:scss(minify) ../css/style.scss

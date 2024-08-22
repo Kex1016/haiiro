@@ -1,3 +1,5 @@
+@import "../mixin/post-header";
+
 .post-card {
   &:not(:last-child) {
     margin-bottom: 1rem;
@@ -15,21 +17,5 @@
     padding-top: 15px;
   }
 
-  .header {
-    .title {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
-
-    .description {
-      font-size: 1rem;
-      color: var(--neutral-500);
-    }
-
-    .date {
-      font-size: 0.75rem;
-      color: var(--neutral-500);
-      margin-bottom: 0;
-    }
-  }
+  @include post-header;
 }

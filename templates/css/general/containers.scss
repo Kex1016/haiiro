@@ -39,6 +39,12 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.split {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 20px;
+}
+
 .flex {
   display: flex;
   gap: 20px;
@@ -67,12 +73,12 @@
 }
 
 $items: (
-  'start': flex-start,
-  'end': flex-end,
-  'center': center,
-  'between': space-between,
-  'around': space-around,
-  'evenly': space-evenly,
+        'start': flex-start,
+        'end': flex-end,
+        'center': center,
+        'between': space-between,
+        'around': space-around,
+        'evenly': space-evenly,
 );
 
 @each $key, $value in $items {

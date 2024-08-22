@@ -1,0 +1,12 @@
+extends includes/head
+block content
+    .container.posts
+        if Object.keys(tags).length === 0
+            h1.text-center No tags yet!
+            a.back.text-center.w-full(href="/") < Go back home.
+        else
+            h1.text-center.mb-3 Tags
+            each tag in tags
+                article.box.display.w-auto.h-auto.tag-card
+                    a(href=`/tags/${tag}`)
+                        h1.title= tag
