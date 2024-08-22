@@ -1,7 +1,7 @@
 @import "../variables";
 
 // Light mode
-:root {
+body {
   --primary-050: #f6f2f6;
   --primary-100: #ede5ec;
   --primary-200: #e3d6e2;
@@ -46,4 +46,12 @@
   --neutral-800: #272727;
   --neutral-900: #191919;
   --neutral-950: #101010;
+
+  .invert {
+    filter: invert(1);
+  }
+
+  .revert {
+    filter: invert(0);
+  }
 }

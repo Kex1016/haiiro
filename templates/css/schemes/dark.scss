@@ -4,7 +4,7 @@
 // Only colors are defined here.
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  body.dark {
     --primary-050: #120f12;
     --primary-100: #1d181d;
     --primary-200: #2c242c;
@@ -49,5 +49,13 @@
     --neutral-800: #dadada;
     --neutral-900: #e7e7e7;
     --neutral-950: #f3f3f3;
+
+    .revert {
+      filter: invert(1);
+    }
+
+    .invert {
+      filter: invert(0);
+    }
   }
 }
