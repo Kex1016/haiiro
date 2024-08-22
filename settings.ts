@@ -4,5 +4,6 @@ export default {
     templateDir: 'templates',
     inputDir: 'site',
     postDir: 'posts',
+    publicDir: 'static',
     siteUrl: 'https://haiiro.moe'
 }
