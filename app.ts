@@ -84,8 +84,9 @@ async function processFile(filePath: string) {
         }
 
         if (data.image && !/^https?:\/\//g.test(data.image)) {
+            // If it starts with /, it's static so we don't need to do anything
+            if (!data.image.startsWith("/")) data.image = `/${Settings.postDir}/${data.slug}/${data.image}`
             // yes, i know this is horrible, but it works.
-            data.image = `/posts/${data.slug}/${data.image}`
         }
 
         if (data.tags) {
@@ -175,7 +176,7 @@ const postListTemplate = Pug.compileFile(path.join(templatePath, 'posts.pug'), {
 fs.writeFileSync(path.join(outputPath, 'posts', 'index.html'), postListTemplate({
     title: 'haiiro - posts',
     posts: posts,
-    canonical: `${Settings.siteUrl}/posts`,
+    canonical: `${Settings.siteUrl}/${Settings.postDir}`,
     currentPage: 'posts',
     tags: tags,
 }));
@@ -221,20 +222,28 @@ const feedObject = {
                     title: "haiiro",
                 },
                 {
+                    generator: "haiiro static site generator",
+                },
+                {
                     link: `${Settings.siteUrl}/`,
                 },
-                {description: "A simple blog for a simple person."},
+                {description: "Recent content from haiiro.moe"},
                 {language: "en-US"},
                 {lastBuildDate: new Date().toUTCString()},
-                ...posts.map(post => ({
+                ...posts.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map(post => ({
                     item: [
                         {title: post.title},
-                        {link: `${Settings.siteUrl}/${post.slug}`},
-                        {description: post.content},
+                        {link: `${Settings.siteUrl}/${Settings.postDir}/${post.slug}/`},
+                        {
+                            description: post.content && post.content
+                                .replace(/<img src="\.\//g, `<img src="`)
+                                .replace(/<img src="(.+?)"/g, `<img src="${Settings.siteUrl}/${Settings.postDir}/${post.slug}/$1"`),
+                        },
+                        {guid: `${Settings.siteUrl}/${Settings.postDir}/${post.slug}/`},
                         {pubDate: new Date(post.date).toUTCString()},
                         ...(post.tags || []).map(tag => ({
                             category: tag,
-                        })),
+                        }))
                     ],
                 })),
             ],
