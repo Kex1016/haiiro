@@ -30,7 +30,7 @@
   margin-bottom: auto;
 }
 
-@for $i from 0 through 5 {
+@for $i from 0 through 10 {
   .m-#{$i} {
     margin: #{$i * 0.25}rem;
   }
@@ -62,7 +62,7 @@
   }
 }
 
-@for $i from 0 through 5 {
+@for $i from 0 through 10 {
   .p-#{$i} {
     padding: #{$i * 0.25}rem;
   }
