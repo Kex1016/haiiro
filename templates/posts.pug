@@ -23,9 +23,9 @@ block content
                                     h1.title= post.title
                                     if post.description
                                         h2.description= post.description
-                                    p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
+                                p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
                 .tags
                     h1.text-center.mb-3 Tags
-                    each tag in Object.keys(tags)
+                    each tag in Object.keys(tags).sort(((a,b)=>tags[a].length < tags[b].length))
                         article.box.tag-card
                             a(href=`/tags/${tag}`).w-full= tag + ` (${tags[tag].length})`

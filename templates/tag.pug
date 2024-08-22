@@ -7,7 +7,7 @@ block content
         else
             a.back.text-center.w-full(href="/posts") < Back to posts
             h1.text-center.mb-3 Posts tagged with #{tag}
-            each post in posts
+            each post in posts.sort((a, b) => new Date(b.date) - new Date(a.date))
                 article.box.post-card
                     if post.image
                         .image
@@ -18,8 +18,8 @@ block content
                             .tags
                                 each tag in post.tags
                                     a(href=`/tags/${tag}`).tag= tag
-                        a(href=`/posts/${post.slug}`)
-                            h1.title= post.title
-                            if post.description
-                                h2.description= post.description
+                            a(href=`/posts/${post.slug}`)
+                                h1.title= post.title
+                                if post.description
+                                    h2.description= post.description
                             p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
