@@ -1,5 +1,5 @@
 export default {
-    isPretty: true,
+    isPretty: false,
     outputDir: 'dist',
     templateDir: 'templates',
     inputDir: 'site',
