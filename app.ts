@@ -107,7 +107,7 @@ async function processFile(filePath: string) {
             canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
             metaDesc: data.description,
             ogImage: data.image,
-            currentPage: isComplex ? '' : data.slug,
+            currentPage: data.slug,
         }));
     } else {
         const dest = path.join(outputPath, folder);
