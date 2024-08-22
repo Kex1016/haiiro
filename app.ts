@@ -23,9 +23,9 @@ if (fs.existsSync(outputPath)) {
 fs.mkdirSync(outputPath);
 
 console.log("Copying static files...");
-const staticFiles = fs.readdirSync(path.join(__dirname, "public"));
+const staticFiles = fs.readdirSync(path.join(__dirname, Settings.publicDir));
 for (const file of staticFiles) {
-    fs.cpSync(path.join(__dirname, "public", file), path.join(outputPath, file), {recursive: true});
+    fs.cpSync(path.join(__dirname, Settings.publicDir, file), path.join(outputPath, file), {recursive: true});
 }
 
 type Post = {
