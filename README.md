@@ -1,3 +1,7 @@
+> [!NOTE]  
+> The repo was initially generated from [this template](https://github.com/CaiJimmy/hugo-theme-stack-starter).
+> The current version of it is a complete rewrite, however.
+
 # haiiro site generator
 
 This repo houses the posts, the comments and the generator itself
