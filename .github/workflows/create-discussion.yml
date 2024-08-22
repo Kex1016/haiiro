@@ -5,6 +5,9 @@ on:
     paths:
       - 'site/posts/**.md'
 
+env:
+    GITHUB_HEAD_REF: ${{ github.head_ref }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,9 +23,9 @@ jobs:
       - name: Get post metadata
         id: metadata
         run: |
-          echo "::set-output name=title::$(grep -m 1 -oP '(?<=title: ).*' site/$GITHUB_HEAD_REF)"
-          echo "::set-output name=filename::$(basename site/$GITHUB_HEAD_REF)"
-          echo "::set-output name=slug::$(echo $GITHUB_HEAD_REF | sed 's/\.md//g')"
+          echo "TITLE=$(grep -m 1 -oP '(?<=title: ).*' site/posts/$GITHUB_HEAD_REF)" >> $GITHUB_OUTPUT
+          echo "FILE=$(basename site/$GITHUB_HEAD_REF)" >> $GITHUB_OUTPUT
+          echo "SLUG=$(echo $GITHUB_HEAD_REF | sed 's/\.md//g')" >> $GITHUB_OUTPUT
           
 
       - name: Build discussion
