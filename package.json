@@ -15,9 +15,8 @@
   },
   "dependencies": {
     "jstransformer-coffee-script": "^1.1.1",
-    "jstransformer-markdown-it": "^3.0.0",
     "jstransformer-scss": "^2.0.0",
-    "markdown-it": "^14.1.0",
+    "marked": "^14.0.0",
     "pug": "^3.0.3",
     "rss": "^1.2.2",
     "sass": "^1.77.8",

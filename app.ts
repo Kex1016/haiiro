@@ -6,12 +6,10 @@
 import fs from 'fs';
 import path from 'path';
 import * as Pug from 'pug';
-import Markdown from 'markdown-it';
+import {marked} from 'marked';
 import yaml from "yaml";
 import xml from "xml";
 import Settings from "./settings.ts";
-
-const Md = new Markdown();
 
 const inputPath = path.join(__dirname, Settings.inputDir);
 const outputPath = path.join(__dirname, Settings.outputDir);
@@ -38,6 +36,7 @@ type Post = {
     tags?: string[],
     slug?: string,
     type: string,
+    content?: string,
 };
 const posts: Post[] = [];
 const pages: Post[] = [];
@@ -114,7 +113,7 @@ async function processFile(filePath: string) {
                 date: data.date,
                 image: data.image,
                 tags: data.tags,
-                content: Md.render(body),
+                content: await marked.parse(body),
                 type: data.type,
             },
             canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
@@ -122,6 +121,8 @@ async function processFile(filePath: string) {
             ogImage: data.image,
             currentPage: data.slug,
         }));
+
+        data.content = await marked.parse(body);
     } else {
         const dest = path.join(outputPath, folder);
         if (!fs.existsSync(dest)) {
@@ -229,7 +230,7 @@ const feedObject = {
                     item: [
                         {title: post.title},
                         {link: `${Settings.siteUrl}/${post.slug}`},
-                        {description: post.description},
+                        {description: post.content},
                         {pubDate: new Date(post.date).toUTCString()},
                         ...(post.tags || []).map(tag => ({
                             category: tag,
