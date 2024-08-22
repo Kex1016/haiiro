@@ -1,15 +1,15 @@
-# haiiro-v2
+# haiiro site generator
 
-To install dependencies:
+This repo houses the posts, the comments and the generator itself
+for [haiiro.moe](https://haiiro.moe). It's a project made with
+[Bun](https://bun.sh), markdown-it, and Pug.
 
-```bash
-bun install
-```
+## Running
 
-To run:
+You will need [Bun](https://bun.sh) (v1.1.20 or above).
 
-```bash
-bun run app.ts
-```
-
-This project was created using `bun init` in bun v1.1.20. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+1. Clone the repo: `git clone https://github.com/Kex1016/haiiro.git`
+2. Run `bun i` inside the repo's folder
+3. Change `settings.ts` as you see fit. **Don't delete any settings.**
+4. Run `bun run build` to build the files
+5. Your files are now in the `Settings.outputDir` folder (default: `dist`).
