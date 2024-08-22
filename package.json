@@ -25,6 +25,7 @@
     "yaml": "^2.5.0"
   },
   "scripts": {
-    "build": "bun run app.ts"
+    "build": "bun run app.ts",
+    "serve": "bun run serve.ts"
   }
 }
