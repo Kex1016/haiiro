@@ -39,7 +39,7 @@ First thing on our list is to enable all the virtualization tools. Which means, 
 
 Then, we'll need to enable IOMMU. To do that, you'll need to edit `/etc/default/grub` like so:
 
-```env
+```sh
 # ...
 GRUB_CMDLINE_LINUX_DEFAULT='... amd_iommu=on iommu=pt ...'
 # ...
@@ -133,7 +133,7 @@ After the Windows install is done, delete the `Sound ich*` and `Channel (spice)`
 
 Add your GPU and the HDMI Audio PCI devices (Add Hardware > PCI Host Device). You can also add your USB host devices, we will not need them on the host anyways. Add your keyboard and mouse along with any other device you might need. I added my Bluetooth dongle for example. Your list should look something like this:
 
-![The VM's devices](img/09_114922.png)
+![The VM's devices](./img/09_114922.png)
 
 ### Making the hooks
 
@@ -278,21 +278,21 @@ Since we're not going to need the host computer's audio, we can just pass the PC
 For some reason cards don't like it whenyou run them in a VM. Here's how you get around this. Inside your VM's settings, go to the _Overview_ section, switch to the XML tab, and edit the VM like this:
 
 ```xml
-...
+<!-- ... -->
 <features>
-  ...
+  <!-- ... -->
   <hyperv>
-    ...
+    <!-- ... -->
     <vendor_id state='on' value='anything'/>
-    ...
+    <!-- ... -->
   </hyperv>
-  ...
+  <!-- ... -->
   <kvm>
     <hidden state='on'/>
   </kvm>
-  ...
+  <!-- ... -->
 </features>
-...
+<!-- ... -->
 ```
 
 _Hiding the KVM CPU isn't necessary on AMD, but I added it just to be sure._
@@ -320,9 +320,9 @@ In your VM settings, go to your GPU's sections, the XML tab, and add this sectio
 
 ```xml
 <hostdev mode="subsystem" type="pci" managed="yes">
-  ...
+  <!-- ... -->
   <rom file="/var/lib/libvirt/vbios/gpu.rom"/>
-  ...
+  <!-- ... -->
 </hostdev>
 ```
 
@@ -344,7 +344,7 @@ The process is the same, except it's in the terminal using NetworkManager's buil
 
 #### The result
 
-![The final result in Plasma's System Settings](img/09_131637.png)
+![The final result in Plasma's System Settings](./img/09_131637.png)
 
 #### Setting the VM's network
 
