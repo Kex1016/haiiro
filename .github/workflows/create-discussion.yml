@@ -1,0 +1,39 @@
+name: Create Discussion
+on:
+  push:
+    branches: [rewrite]
+    paths:
+      - 'site/**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      discussions: write
+
+    # Steps:
+    # - Get the post metadata
+    # - Create a discussion on GitHub with the post's title
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get post metadata
+        id: metadata
+        run: |
+          echo "::set-output name=title::$(grep -m 1 -oP '(?<=title: ).*' site/$GITHUB_HEAD_REF)"
+          echo "::set-output name=filename::$(basename site/$GITHUB_HEAD_REF)"
+          echo "::set-output name=slug::$(echo $GITHUB_HEAD_REF | sed 's/\.md//g')"
+          
+
+      - name: Create Discussion
+        uses: peter-evans/create-or-update-github-discussion@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: ${{ steps.metadata.outputs.title }}
+          body: |
+            This discussion is for the post [${{ steps.metadata.outputs.title }}](https://haiiro.moe/posts/${{ steps.metadata.outputs.slug }}).
+            Please leave your thoughts and comments below.
+          category: Posts
