@@ -5,9 +5,9 @@ block content
         p#quotes
         div#nav.home
             div.links.container
-                a.link(href="/posts") posts
-                a.link(href="/contact") contact
-                a.link(href="/about") about
+                a(href="/posts", class=`link${currentPage === 'posts' ? " active" : ''}`) posts
+                a(href="/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
+                a(href="/about", class=`link${currentPage === 'about' ? " active" : ''}`) about
     script.
         const quotes = [
             `Make your own space, be creative :D`,
