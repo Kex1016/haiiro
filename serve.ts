@@ -37,6 +37,7 @@ const srv = Bun.serve({
 
             let contentType;
             // Map the file extension to a content type
+            // Extremely scuffed way of doing it. This only needs to work for local testing.
             const ext = path.extname(file);
             switch (ext) {
                 case ".html":
@@ -53,6 +54,9 @@ const srv = Bun.serve({
                     break;
                 case ".xml":
                     contentType = "application/xml";
+                    break;
+                case ".svg":
+                    contentType = "image/svg+xml";
                     break;
                 default:
                     contentType = "text/plain";
