@@ -25,12 +25,21 @@ jobs:
           echo "::set-output name=slug::$(echo $GITHUB_HEAD_REF | sed 's/\.md//g')"
           
 
-      - name: Create Discussion
-        uses: peter-evans/create-or-update-github-discussion@v1
+      - name: Build discussion
+        id: build-discussion
+        uses: nvdaes/build-discussion@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Kex1016/haiiro
+          category-position: 1
           title: ${{ steps.metadata.outputs.title }}
           body: |
-            This discussion is for the post [${{ steps.metadata.outputs.title }}](https://haiiro.moe/posts/${{ steps.metadata.outputs.slug }}).
-            Please leave your thoughts and comments below.
-          category: Posts
+            ${{ steps.metadata.outputs.title }}
+            ---
+            [Read more](https://haiiro.moe/posts/${{ steps.metadata.outputs.slug }})
+
+      - name: Print Output
+        id: output
+        run: |
+          echo "${{ steps.build-discussion.outputs.discussion-id }}"
+          echo "${{ steps.build-discussion.outputs.discussion-url }}"
+          echo "${{ steps.build-discussion.outputs.discussion-number }}"
