@@ -1,6 +1,8 @@
 doctype html
 html(lang="en")
     head
+        script.
+            if (location.pathname.slice(-1) !== '/') window.location = location.pathname + '/';
         title= title
         // Meta tags
         meta(lang="en")
@@ -21,6 +23,8 @@ html(lang="en")
         link(rel="icon", type="image/png", href="/images/favicon.png")
         // Other links
         link(rel="canonical", href=`${canonical}`)
+        // Highlight.js
+        link(rel="stylesheet", href="/highlight/styles/dark.css")
         // Fonts
         link(rel="preconnect", href="https://fonts.googleapis.com")
         link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
