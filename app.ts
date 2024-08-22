@@ -84,6 +84,11 @@ async function processFile(filePath: string) {
             data.slug = name;
         }
 
+        if (data.image && !/^https?:\/\//g.test(data.image)) {
+            // yes, i know this is horrible, but it works.
+            data.image = `/posts/${data.slug}/${data.image}`
+        }
+
         if (data.tags) {
             const _t = [];
             for (const tag of data.tags) {
