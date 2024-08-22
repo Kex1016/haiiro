@@ -21,4 +21,4 @@ block content
                             h1.title= post.title
                             if post.description
                                 h2.description= post.description
-                            p.date= post.date
+                            p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
