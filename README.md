@@ -2,7 +2,7 @@
 
 This repo houses the posts, the comments and the generator itself
 for [haiiro.moe](https://haiiro.moe). It's a project made with
-[Bun](https://bun.sh), markdown-it, and Pug.
+[Bun](https://bun.sh), marked, and Pug.
 
 ## Running
 
