@@ -45,6 +45,20 @@
   gap: 20px;
 }
 
+blockquote {
+  border-left: 3px solid var(--neutral-800);
+  background: var(--neutral-300);
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .flex {
   display: flex;
   gap: 20px;
