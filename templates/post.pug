@@ -1,0 +1,41 @@
+extends includes/head
+block content
+    .container.post
+        if post.type === 'post'
+            a(href="/posts").back < Back to posts
+        else
+            a(href="/").back < Back home
+        if post.image
+            .image
+                img(src=`${post.image}`, alt=post.title).mx-auto
+        if post.type === 'post'
+            .header
+                if post.tags
+                    .tags
+                        each tag in post.tags
+                            a(href=`/tags/${tag}`).tag= tag
+                h1.title= post.title
+                if post.description
+                    h2.description= post.description
+                p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
+        .content!= post.content
+        if post.type === 'post'
+            .giscus
+    if post.type === 'post'
+        script(
+            src="https://giscus.app/client.js"
+            data-repo="Kex1016/haiiro"
+            data-repo-id="R_kgDOKvd7pA"
+            data-category="Posts"
+            data-category-id="DIC_kwDOKvd7pM4Ch2LE"
+            data-mapping="og:title"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="transparent_dark"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+        )

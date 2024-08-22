@@ -1,0 +1,46 @@
+a {
+  color: var(--primary-500);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linktree {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease-in-out;
+
+  img {
+    height: 50px;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--secondary-800);
+    transition: color 0.2s ease-in-out;
+
+    .service, &.service {
+      color: var(--primary-800);
+    }
+  }
+
+  &:hover {
+    background-color: var(--neutral-200);
+
+    span {
+      color: var(--secondary-600);
+
+      .service, &.service {
+        color: var(--primary-600);
+      }
+    }
+  }
+}

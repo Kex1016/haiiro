@@ -1,0 +1,30 @@
+{
+  "name": "haiiro-v2",
+  "module": "app.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/markdown-it": "^14.1.2",
+    "@types/pug": "^2.0.10",
+    "@types/rss": "^0.0.32",
+    "@types/sass": "^1.45.0",
+    "@types/xml": "^1.0.11"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "jstransformer-coffee-script": "^1.1.1",
+    "jstransformer-scss": "^2.0.0",
+    "marked": "^14.0.0",
+    "pug": "^3.0.3",
+    "rss": "^1.2.2",
+    "sass": "^1.77.8",
+    "xml": "^1.0.1",
+    "yaml": "^2.5.0"
+  },
+  "scripts": {
+    "build": "bun run app.ts",
+    "serve": "bun run serve.ts"
+  }
+}

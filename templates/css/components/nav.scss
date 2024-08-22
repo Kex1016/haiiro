@@ -1,0 +1,135 @@
+@import "../variables";
+
+// Navigation
+
+#nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding-top: 10px;
+  margin-bottom: 50px;
+
+  &.home {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 0;
+
+    .links {
+      padding: 0;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--neutral-050);
+    border: 3px solid var(--neutral-900);
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 5px;
+
+    .link {
+      text-decoration: 1px solid transparent underline;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      background-color: transparent;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      width: 12ch;
+
+      &:hover {
+        background-color: var(--neutral-900);
+        color: var(--neutral-050);
+      }
+
+      &.active {
+        background-color: var(--neutral-900);
+        color: var(--neutral-050);
+      }
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.2s ease-in-out;
+    }
+  }
+}
+
+#nav-mobile {
+  display: none;
+}
+
+// Mobile
+@media (max-width: 768px) {
+  #nav:not(.home) {
+    display: none;
+  }
+
+  #nav-mobile {
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--neutral-050);
+    border-bottom: 3px solid var(--neutral-900);
+    padding: 10px 0;
+    margin-bottom: 50px;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      gap: 1rem;
+      margin: 0 auto;
+
+      .link {
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        width: 12ch;
+        text-align: center;
+
+        &:hover {
+          background-color: var(--neutral-900);
+          color: var(--neutral-050);
+        }
+
+        &.active {
+          background-color: var(--neutral-900);
+          color: var(--neutral-050);
+        }
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        transition: background-color 0.2s ease-in-out;
+      }
+    }
+  }
+}

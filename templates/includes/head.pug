@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        script.
+            if (location.pathname.slice(-1) !== '/') window.location = location.pathname + '/';
+        title= title
+        // Meta tags
+        meta(lang="en")
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        // Twitter
+        meta(name="twitter:site", content="@cakeswastaken")
+        meta(name="twitter:creator", content="@cakeswastaken")
+        meta(name="twitter:title", content="Haiiro")
+        meta(name="twitter:description", content=`${metaDesc || 'A simple blog for a simple person.'}`)
+        // Open Graph
+        meta(property="og:title", content=`${title}`)
+        meta(property="og:description", content=`${metaDesc || 'A simple blog for a simple person.'}`)
+        meta(property="og:type", content="website")
+        meta(property="og:url", content=`${canonical}`)
+        meta(property="og:image", content=`${ogImage || "https://haiiro.moe/images/og-image.png"}`)
+        // Favicon
+        link(rel="icon", type="image/png", href="/favicon.png")
+        // Other links
+        link(rel="canonical", href=`${canonical}`)
+        // Highlight.js
+        link(rel="stylesheet", href="/highlight/styles/dark.css")
+        // Fonts
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic+Coding:wght@400;700&display=swap")
+        // Tags
+        if post
+            if post.tags
+                meta(name="keywords", content=`blog, simple, creative, personal, haiiro, cakes, cakeswastaken, ${post.tags.join(', ')}`)
+        else
+            meta(name="keywords", content="blog, simple, creative, personal, haiiro, cakes, cakeswastaken")
+        // CSS
+        style
+            include:scss(minify) ../css/style.scss
+    body
+        unless currentPage === 'home'
+            include ../includes/nav.pug
+        block content
+        include ../includes/footer.pug

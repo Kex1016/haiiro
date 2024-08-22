@@ -1,0 +1,21 @@
+extends includes/head
+block content
+    input#theme-switch(type="checkbox")
+    div.container.display.flex-col
+        h1 haiiro
+        p#quotes
+        div#nav.home
+            div.links.container
+                a(href="/posts", class=`link${currentPage === 'posts' ? " active" : ''}`) posts
+                a(href="/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
+                a(href="/about", class=`link${currentPage === 'about' ? " active" : ''}`) about
+    script.
+        const quotes = [
+            `Make your own space, be creative :D`,
+            `The internet really shouldn't be this boring.`,
+            `A simple home for a simple person.`,
+            `Algorithm? None of that here.`,
+            `*slaps HTML* This bad boy can fit so many React load times in it.`
+        ];
+        const quote = document.getElementById('quotes');
+        quote.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];

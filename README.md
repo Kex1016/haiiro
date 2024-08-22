@@ -1,26 +1,15 @@
-# haiiro.moe
+# haiiro site generator
 
-The source code for my personal website, [haiiro.moe](https://haiiro.moe).
+This repo houses the posts, the comments and the generator itself
+for [haiiro.moe](https://haiiro.moe). It's a project made with
+[Bun](https://bun.sh), marked, and Pug.
 
----
+## Running
 
-## Acknowledgements
+You will need [Bun](https://bun.sh) (v1.1.20 or above).
 
-### [Stack theme](https://github.com/CaiJimmy/hugo-theme-stack-starter)
-
-This is the theme I based the whole site on.
-Did a bunch of changes, but the base is still there.
-Thank you for the awesome theme, Jimmy!
-
-### [Hugo](https://gohugo.io/)
-
-The static site generator I use. It's awesome.
-
-### [Netlify](https://www.netlify.com/)
-
-The hosting service I use for my random avatar generator.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
+1. Clone the repo: `git clone https://github.com/Kex1016/haiiro.git`
+2. Run `bun i` inside the repo's folder
+3. Change `settings.ts` as you see fit. **Don't delete any settings.**
+4. Run `bun run build` to build the files
+5. Your files are now in the `Settings.outputDir` folder (default: `dist`).

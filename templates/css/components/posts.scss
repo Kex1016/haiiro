@@ -1,0 +1,30 @@
+@import "../mixin/post-header";
+
+.post-card {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .image {
+    img {
+      aspect-ratio: 8/3;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .image + .header {
+    padding-top: 15px;
+  }
+
+  @include post-header;
+}
+
+// Mobile
+@media (max-width: 768px) {
+  .split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
