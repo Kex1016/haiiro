@@ -134,19 +134,6 @@ fs.writeFileSync(path.join(outputPath, 'index.html'), indexTemplate({
 await processDirectory(inputPath);
 console.log("Done processing files.");
 
-console.log("Rendering the post list page...");
-if (!fs.existsSync(path.join(outputPath, Settings.postDir))) {
-    fs.mkdirSync(path.join(outputPath, Settings.postDir), {recursive: true});
-}
-
-const postListTemplate = Pug.compileFile(path.join(templatePath, 'posts.pug'), {pretty: Settings.isPretty});
-fs.writeFileSync(path.join(outputPath, 'posts', 'index.html'), postListTemplate({
-    title: 'haiiro - posts',
-    posts: posts,
-    canonical: `${Settings.siteUrl}/posts`,
-    currentPage: 'posts',
-}));
-
 // get the tags from the posts
 type Tag = {
     [tag: string]: Post[]
@@ -165,7 +152,49 @@ posts.forEach(post => {
     }
 });
 
-// TODO: Render the tag pages
+console.log("Rendering the post list page...");
+if (!fs.existsSync(path.join(outputPath, Settings.postDir))) {
+    fs.mkdirSync(path.join(outputPath, Settings.postDir), {recursive: true});
+}
+
+const postListTemplate = Pug.compileFile(path.join(templatePath, 'posts.pug'), {pretty: Settings.isPretty});
+fs.writeFileSync(path.join(outputPath, 'posts', 'index.html'), postListTemplate({
+    title: 'haiiro - posts',
+    posts: posts,
+    canonical: `${Settings.siteUrl}/posts`,
+    currentPage: 'posts',
+    tags: tags,
+}));
+
+for (const tag in tags) {
+    const tagTemplate = Pug.compileFile(path.join(templatePath, 'tag.pug'), {pretty: Settings.isPretty});
+
+    if (!fs.existsSync(path.join(outputPath, 'tags', tag))) {
+        fs.mkdirSync(path.join(outputPath, 'tags', tag), {recursive: true});
+    }
+
+    fs.writeFileSync(path.join(outputPath, 'tags', tag, 'index.html'), tagTemplate({
+        title: `haiiro - ${tag}`,
+        posts: tags[tag],
+        tag: tag,
+        canonical: `${Settings.siteUrl}/tags/${tag}`,
+        currentPage: `tags/${tag}`,
+    }));
+}
+
+console.log("Rendering tag list...");
+const tagListTemplate = Pug.compileFile(path.join(templatePath, 'tags.pug'), {pretty: Settings.isPretty});
+
+if (!fs.existsSync(path.join(outputPath, 'tags'))) {
+    fs.mkdirSync(path.join(outputPath, 'tags'), {recursive: true});
+}
+
+fs.writeFileSync(path.join(outputPath, 'tags', 'index.html'), tagListTemplate({
+    title: 'haiiro - tags',
+    tags: tags,
+    canonical: `${Settings.siteUrl}/tags`,
+    currentPage: 'tags',
+}));
 
 console.log("Generating RSS feed...");
 const feedObject = {
