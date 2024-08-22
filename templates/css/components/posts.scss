@@ -19,3 +19,12 @@
 
   @include post-header;
 }
+
+// Mobile
+@media (max-width: 768px) {
+  .split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

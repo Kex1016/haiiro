@@ -28,6 +28,18 @@
       font-size: 0.75rem;
       color: var(--neutral-500);
       margin-bottom: 0;
+      text-decoration: none !important;
+    }
+  }
+
+  // Mobile
+  @media (max-width: 768px) {
+    .header {
+      .tags {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
     }
   }
 }

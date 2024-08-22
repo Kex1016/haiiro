@@ -5,3 +5,10 @@ div#nav
         div.logo haiiro
         a(href="/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
         a(href="/about", class=`link${currentPage === 'about' ? " active" : ''}`) about
+div#nav-mobile
+    div.logo haiiro
+    div.links.container
+        a(href="/", class=`link${currentPage === 'home' ? " active": ''}`) home
+        a(href="/posts", class=`link${currentPage === 'posts' ? " active": ''}`) posts
+        a(href="/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
+        a(href="/about", class=`link${currentPage === 'about' ? " active" : ''}`) about
