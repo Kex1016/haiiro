@@ -3,7 +3,7 @@ on:
   push:
     branches: [rewrite]
     paths:
-      - 'site/**.md'
+      - 'site/posts/**.md'
 
 jobs:
   build:
@@ -13,9 +13,6 @@ jobs:
       contents: read
       discussions: write
 
-    # Steps:
-    # - Get the post metadata
-    # - Create a discussion on GitHub with the post's title
     steps:
       - name: Checkout
         uses: actions/checkout@v2
