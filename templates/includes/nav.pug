@@ -1,7 +1,7 @@
 div#nav
     div.links.container
-        a.link(href="/") home
-        a.link(href="/posts") posts
+        a(href="/", class=`link${currentPage === 'home' ? " active": ''}`) home
+        a(href="/posts", class=`link${currentPage === 'posts' ? " active": ''}`) posts
         div.logo haiiro
-        a.link(href="/contact") contact
-        a.link(href="/about") about
+        a(href="/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
+        a(href="/about", class=`link${currentPage === 'about' ? " active" : ''}`) about

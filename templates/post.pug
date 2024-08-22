@@ -1,0 +1,23 @@
+include includes/head.pug
+body
+    include includes/nav.pug
+    .container.post
+        if post.type === 'post'
+            a(href="/posts").back < Back to posts
+        else
+            a(href="/").back < Back home
+        if post.image
+            .image
+                img(src=`${post.image}`, alt=post.title).mx-auto
+        if post.type === 'post'
+            .header
+                if post.tags
+                    .tags
+                        each tag in post.tags
+                            a(href=`/tags/${tag}`).tag= tag
+                h1.title= post.title
+                if post.description
+                    h2.description= post.description
+                p.date= post.date
+        .content!= post.content
+    include includes/footer.pug

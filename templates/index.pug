@@ -1,13 +1,21 @@
-doctype html
-html(lang="en")
-    include includes/head.pug
-    body
-        div.container.display.flex-col
-            h1 haiiro
-            p A simple blog for a simple person.
-            div#nav.home
-                div.links.container
-                    a.link(href="/posts") posts
-                    a.link(href="/contact") contact
-                    a.link(href="/about") about
-        include includes/footer.pug
+include includes/head.pug
+body
+    div.container.display.flex-col
+        h1 haiiro
+        p#quotes
+        div#nav.home
+            div.links.container
+                a.link(href="/posts") posts
+                a.link(href="/contact") contact
+                a.link(href="/about") about
+    include includes/footer.pug
+    script.
+        const quotes = [
+            `Make your own space, be creative :D`,
+            `The internet really shouldn't be this boring.`,
+            `A simple home for a simple person.`,
+            `Algorithm? None of that here.`,
+            `*slaps HTML* This bad boy can fit so many React load times in it.`
+        ];
+        const quote = document.getElementById('quotes');
+        quote.innerHTML = quotes[Math.floor(Math.random() * quotes.length)];

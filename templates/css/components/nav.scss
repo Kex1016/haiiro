@@ -3,15 +3,17 @@
 // Navigation
 
 #nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  margin-bottom: 50px;
 
   &.home {
     position: static;
     margin-top: 20px;
+    margin-bottom: 0;
 
     .links {
       padding: 0;
@@ -40,6 +42,11 @@
       width: 12ch;
 
       &:hover {
+        background-color: var(--neutral-900);
+        color: var(--neutral-050);
+      }
+
+      &.active {
         background-color: var(--neutral-900);
         color: var(--neutral-050);
       }

@@ -1,0 +1,95 @@
+// Spacing
+
+.m-auto {
+  margin: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@for $i from 0 through 5 {
+  .m-#{$i} {
+    margin: #{$i * 0.25}rem;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i * 0.25}rem;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i * 0.25}rem;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i * 0.25}rem;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i * 0.25}rem;
+  }
+
+  .mx-#{$i} {
+    margin-left: #{$i * 0.25}rem;
+    margin-right: #{$i * 0.25}rem;
+  }
+
+  .my-#{$i} {
+    margin-top: #{$i * 0.25}rem;
+    margin-bottom: #{$i * 0.25}rem;
+  }
+}
+
+@for $i from 0 through 5 {
+  .p-#{$i} {
+    padding: #{$i * 0.25}rem;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{$i * 0.25}rem;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{$i * 0.25}rem;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i * 0.25}rem;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i * 0.25}rem;
+  }
+
+  .px-#{$i} {
+    padding-left: #{$i * 0.25}rem;
+    padding-right: #{$i * 0.25}rem;
+  }
+
+  .py-#{$i} {
+    padding-top: #{$i * 0.25}rem;
+    padding-bottom: #{$i * 0.25}rem;
+  }
+}

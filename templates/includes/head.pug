@@ -6,7 +6,21 @@ html(lang="en")
         meta(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        // Twitter
+        meta(name="twitter:site", content="@cakeswastaken")
+        meta(name="twitter:creator", content="@cakeswastaken")
+        meta(name="twitter:title", content="Haiiro")
+        meta(name="twitter:description", content=`${metaDesc || 'A simple blog for a simple person.'}`)
+        // Open Graph
+        meta(property="og:title", content=`${title}`)
+        meta(property="og:description", content=`${metaDesc || 'A simple blog for a simple person.'}`)
+        meta(property="og:type", content="website")
+        meta(property="og:url", content=`${canonical}`)
+        meta(property="og:image", content=`${ogImage || "https://haiiro.moe/images/og-image.png"}`)
+        // Favicon
+        link(rel="icon", type="image/png", href="/images/favicon.png")
+        // Other links
+        link(rel="canonical", href=`${canonical}`)
         // CSS
         style
             include:scss ../css/style.scss
-        // JavaScript? Not needed :3
