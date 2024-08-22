@@ -5,6 +5,7 @@ block content
             h1.text-center No posts yet!
             a.back.text-center.w-full(href="/") < Go back home.
         else
+            a.back.text-center.w-full(href="/posts") < Back to posts
             h1.text-center.mb-3 Posts tagged with #{tag}
             each post in posts
                 article.box.post-card
