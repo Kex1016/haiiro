@@ -25,8 +25,7 @@ block content
                                         h2.description= post.description
                                     p.date= `${new Date(post.date).toLocaleDateString()} ${new Date(post.date).toLocaleTimeString()}`
                 .tags
-                    a(href="/tags")
-                        h1.text-center.mb-3 Tags
+                    h1.text-center.mb-3 Tags
                     each tag in Object.keys(tags)
                         article.box.tag-card
                             a(href=`/tags/${tag}`).w-full= tag + ` (${tags[tag].length})`

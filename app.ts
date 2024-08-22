@@ -84,6 +84,14 @@ async function processFile(filePath: string) {
             data.slug = name;
         }
 
+        if (data.tags) {
+            const _t = [];
+            for (const tag of data.tags) {
+                _t.push(tag.toLowerCase().replace(/ /g, "-"));
+            }
+            data.tags = _t;
+        }
+
         if (data.type === "post") posts.push(data);
         else pages.push(data);
 
@@ -166,6 +174,7 @@ fs.writeFileSync(path.join(outputPath, 'posts', 'index.html'), postListTemplate(
     tags: tags,
 }));
 
+console.log("Rendering tag pages...")
 for (const tag in tags) {
     const tagTemplate = Pug.compileFile(path.join(templatePath, 'tag.pug'), {pretty: Settings.isPretty});
 
@@ -181,20 +190,6 @@ for (const tag in tags) {
         currentPage: `tags/${tag}`,
     }));
 }
-
-console.log("Rendering tag list...");
-const tagListTemplate = Pug.compileFile(path.join(templatePath, 'tags.pug'), {pretty: Settings.isPretty});
-
-if (!fs.existsSync(path.join(outputPath, 'tags'))) {
-    fs.mkdirSync(path.join(outputPath, 'tags'), {recursive: true});
-}
-
-fs.writeFileSync(path.join(outputPath, 'tags', 'index.html'), tagListTemplate({
-    title: 'haiiro - tags',
-    tags: tags,
-    canonical: `${Settings.siteUrl}/tags`,
-    currentPage: 'tags',
-}));
 
 console.log("Generating RSS feed...");
 const feedObject = {
