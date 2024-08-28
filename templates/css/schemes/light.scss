@@ -1,7 +1,7 @@
 @import "../variables";
 
 // Light mode
-body {
+body, body.light, html.light body {
   --primary-050: #f6f2f6;
   --primary-100: #ede5ec;
   --primary-200: #e3d6e2;

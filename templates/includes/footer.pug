@@ -13,16 +13,32 @@ script#themeswitch.
         const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (userPrefersDark) {
             document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            document.body.classList.remove('light');
+            document.documentElement.classList.remove('light');
             localStorage.setItem('theme', 'dark');
             themeSwitch.checked = true;
+        } else {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            document.body.classList.add('light');
+            document.documentElement.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            themeSwitch.checked = false;
         }
     }
     themeSwitch.addEventListener('change', function () {
         if (this.checked) {
             document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            document.body.classList.remove('light');
+            document.documentElement.classList.remove('light');
             localStorage.setItem('theme', 'dark');
         } else {
             document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            document.body.classList.add('light');
+            document.documentElement.classList.add('light');
             localStorage.setItem('theme', 'light');
         }
     });

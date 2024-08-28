@@ -25,6 +25,12 @@ html(lang="en")
         link(rel="canonical", href=`${canonical}`)
         // Highlight.js
         link(rel="stylesheet", href="/highlight/styles/dark.css")
+        // test
+        script.
+            const t = localStorage.getItem('theme');
+            if (t) {
+                document.documentElement.classList.add(`${t}`);
+            }
         // Fonts
         link(rel="preconnect", href="https://fonts.googleapis.com")
         link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
