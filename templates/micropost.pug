@@ -1,0 +1,6 @@
+extends includes/head
+block content
+    script.
+        const url = new URL(window.location.href);
+        const slug = url.pathname.split('/')[2];
+        window.location.href = `/posts/#${slug}`

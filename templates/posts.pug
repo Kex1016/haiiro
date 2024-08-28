@@ -9,7 +9,7 @@ block content
                 .posts
                     h1.text-center.mb-3 Posts
                     each post in posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-                        article.box.post-card(style=`${post.type === 'micro' ? 'border: 3px solid var(--neutral-400)' : ''}`)
+                        article.box.post-card(style=`${post.type === 'micro' ? 'border: 3px solid var(--neutral-400)' : ''}`, id=`${post.slug}`)
                             if post.image
                                 .image
                                     a(href=`/posts/${post.slug}`)

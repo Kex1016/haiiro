@@ -64,3 +64,15 @@ script#trailslash.
     });
 script#highlight(src="/highlight/highlight.min.js")
 script hljs.highlightAll();
+script#hashes.
+    const url = new URL(window.location.href);
+    // If we have a hash, scroll to it (plus a little bit of padding for the nav)
+    if (url.hash) {
+        const el = document.querySelector(url.hash);
+        if (el) {
+            setTimeout(()=>{
+                el.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+                window.scrollBy(0, -document.querySelector('#nav').clientHeight);
+            }, 10);
+        }
+    }

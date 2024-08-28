@@ -106,30 +106,29 @@ async function processFile(filePath: string) {
         if (data.type === "post" || data.type === "micro") posts.push(data);
         else pages.push(data);
 
-        const postTemplate = Pug.compileFile(path.join(templatePath, 'post.pug'), {pretty: Settings.isPretty});
+        let postTemplate = Pug.compileFile(path.join(templatePath, 'post.pug'), {pretty: Settings.isPretty});
+        if (data.type === "micro") postTemplate = Pug.compileFile(path.join(templatePath, 'micropost.pug'), {pretty: Settings.isPretty});
         const postPath = path.join(outputPath, folder, isComplex ? '' : data.slug);
         if (!fs.existsSync(postPath)) {
             fs.mkdirSync(postPath, {recursive: true});
         }
-        if (data.type !== "micro") {
-            fs.writeFileSync(path.join(postPath, 'index.html'), postTemplate({
-                title: `haiiro - ${data.title.toLowerCase()}`,
+        fs.writeFileSync(path.join(postPath, 'index.html'), postTemplate({
+            title: `haiiro - ${data.title.toLowerCase()}`,
+            type: data.type,
+            post: {
+                title: data.title,
+                description: data.description,
+                date: data.date,
+                image: data.image,
+                tags: data.tags,
+                content: await marked.parse(body),
                 type: data.type,
-                post: {
-                    title: data.title,
-                    description: data.description,
-                    date: data.date,
-                    image: data.image,
-                    tags: data.tags,
-                    content: await marked.parse(body),
-                    type: data.type,
-                },
-                canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
-                metaDesc: data.description,
-                ogImage: data.image,
-                currentPage: data.slug,
-            }));
-        }
+            },
+            canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
+            metaDesc: data.description,
+            ogImage: data.image,
+            currentPage: data.slug,
+        }));
 
         data.content = await marked.parse(body);
     } else {
