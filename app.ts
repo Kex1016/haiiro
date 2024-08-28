@@ -83,6 +83,12 @@ async function processFile(filePath: string) {
             data.slug = name;
         }
 
+        if (data.type === "micro") {
+            // Force clear the tags and image
+            data.tags = [];
+            delete data.image;
+        }
+
         if (data.image && !/^https?:\/\//g.test(data.image)) {
             // If it starts with /, it's static so we don't need to do anything
             if (!data.image.startsWith("/")) data.image = `/${Settings.postDir}/${data.slug}/${data.image}`
@@ -97,7 +103,7 @@ async function processFile(filePath: string) {
             data.tags = _t;
         }
 
-        if (data.type === "post") posts.push(data);
+        if (data.type === "post" || data.type === "micro") posts.push(data);
         else pages.push(data);
 
         const postTemplate = Pug.compileFile(path.join(templatePath, 'post.pug'), {pretty: Settings.isPretty});
@@ -105,23 +111,25 @@ async function processFile(filePath: string) {
         if (!fs.existsSync(postPath)) {
             fs.mkdirSync(postPath, {recursive: true});
         }
-        fs.writeFileSync(path.join(postPath, 'index.html'), postTemplate({
-            title: `haiiro - ${data.title.toLowerCase()}`,
-            type: data.type,
-            post: {
-                title: data.title,
-                description: data.description,
-                date: data.date,
-                image: data.image,
-                tags: data.tags,
-                content: await marked.parse(body),
+        if (data.type !== "micro") {
+            fs.writeFileSync(path.join(postPath, 'index.html'), postTemplate({
+                title: `haiiro - ${data.title.toLowerCase()}`,
                 type: data.type,
-            },
-            canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
-            metaDesc: data.description,
-            ogImage: data.image,
-            currentPage: data.slug,
-        }));
+                post: {
+                    title: data.title,
+                    description: data.description,
+                    date: data.date,
+                    image: data.image,
+                    tags: data.tags,
+                    content: await marked.parse(body),
+                    type: data.type,
+                },
+                canonical: `${Settings.siteUrl}/${folder}/${isComplex ? '' : data.slug}`,
+                metaDesc: data.description,
+                ogImage: data.image,
+                currentPage: data.slug,
+            }));
+        }
 
         data.content = await marked.parse(body);
     } else {

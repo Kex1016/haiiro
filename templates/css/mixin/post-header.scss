@@ -30,6 +30,12 @@
       margin-bottom: 0;
       text-decoration: none !important;
     }
+
+    .micro {
+      & > p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 
   // Mobile
