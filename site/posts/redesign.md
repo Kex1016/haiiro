@@ -4,8 +4,8 @@ description: Haiiro gets a fresh coat of paint.
 slug: redesign
 date: 2024-08-22 19:50:00+0100
 tags:
-    - bun
     - typescript
+    - webdev
     - rambling
 ---
 

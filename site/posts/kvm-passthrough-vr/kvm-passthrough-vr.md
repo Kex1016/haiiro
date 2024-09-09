@@ -4,8 +4,7 @@ description: KVM passthough and bridge networks FTW!
 slug: kvm-passthrough-vr
 date: 2024-02-09 10:45:00+0100
 tags:
-  - kvm
-  - qemu
+  - virtualization
   - networking
 ---
 

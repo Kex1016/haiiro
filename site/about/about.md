@@ -35,4 +35,4 @@ ramble. Or both! Probably both.
 
 I have all [my links](/links) listed on this site, but if you like
 more ancient tech, you can email me at [cakes@haiiro.moe](mailto:cakes@haiiro.moe)
-or if you're here for business (why), hit up [nydavid@haiiro.moe](mailto:david@haiiro.moe).
+or if you're here for business (why), hit up [nydavid@haiiro.moe](mailto:nydavid@haiiro.moe).

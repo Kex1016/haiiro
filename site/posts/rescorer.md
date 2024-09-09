@@ -5,9 +5,8 @@ slug: al-rescorer
 date: 2024-03-30 18:50:00+0100
 tags:
   - typescript
-  - react
-  - vite
-  - tailwindcss
+  - webdev
+  - anilist
 ---
 
 # Hi!

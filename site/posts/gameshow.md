@@ -5,7 +5,7 @@ slug: gameshow
 date: 2023-12-17 00:54:59+0100
 tags:
   - typescript
-  - react
+  - webdev
 ---
 
 # Hello again!
