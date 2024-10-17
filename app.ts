@@ -10,6 +10,7 @@ import { marked } from "marked";
 import yaml from "yaml";
 import xml from "xml";
 import Settings from "./settings.ts";
+import * as sass from "sass";
 
 const inputPath = path.join(__dirname, Settings.inputDir);
 const outputPath = path.join(__dirname, Settings.outputDir);
@@ -31,6 +32,13 @@ for (const file of staticFiles) {
     { recursive: true }
   );
 }
+
+console.log("Compiling and minifying CSS...");
+const css = sass.compile("./templates/css/style.scss", {
+  style: "compressed",
+});
+
+await Bun.write(`${outputPath}/style.css`, css.css);
 
 type Post = {
   title: string;

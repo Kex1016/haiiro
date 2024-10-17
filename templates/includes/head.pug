@@ -42,8 +42,7 @@ html(lang="en")
         else
             meta(name="keywords", content="blog, simple, creative, personal, haiiro, cakes, cakeswastaken")
         // CSS
-        style
-            include:scss(minify) ../css/style.scss
+        link(rel="stylesheet", href="/style.css")
     body
         unless currentPage === 'home'
             include ../includes/nav.pug
