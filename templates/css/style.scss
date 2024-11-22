@@ -17,3 +17,22 @@
 @import "components/nav";
 @import "components/post";
 @import "components/posts";
+
+// Home page (literally just the haiiro link)
+.link-haiiro {
+  margin-top: 50px;
+
+  img {
+    max-width: 400px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+}

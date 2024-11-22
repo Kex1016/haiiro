@@ -2,13 +2,16 @@ extends includes/head
 block content
     input#theme-switch(type="checkbox")
     div.container.display.flex-col
-        h1 haiiro
+        h1 cakes
         p#quotes
         div#nav.home
             div.links.container
                 a(href="/~cakes/posts", class=`link${currentPage === 'posts' ? " active" : ''}`) posts
                 a(href="/~cakes/links", class=`link${currentPage === 'links' ? " active" : ''}`) links
                 a(href="/~cakes/about", class=`link${currentPage === 'about' ? " active" : ''}`) about
+        .link-haiiro 
+            a(href="/")
+                img(src="/img/haiiro_y2k.png", alt="haiiro logo")
     script.
         const quotes = [
             `Make your own space, be creative :D`,
