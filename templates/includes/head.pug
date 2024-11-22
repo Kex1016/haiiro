@@ -18,7 +18,7 @@ html(lang="en")
         meta(property="og:description", content=`${metaDesc || 'a simple blog for a simple person.'}`)
         meta(property="og:type", content="website")
         meta(property="og:url", content=`${canonical}`)
-        meta(property="og:image", content=`${ogImage || "https://haiiro.moe/~cakes/images/og-image.png"}`)
+        meta(property="og:image", content=`https://haiiro.moe/~cakes${ogImage || "/images/og-image.png"}`)
         // Favicon
         link(rel="icon", type="image/png", href="/~cakes/favicon.png")
         // Other links
