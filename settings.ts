@@ -5,5 +5,5 @@ export default {
   inputDir: "site",
   postDir: "posts",
   publicDir: "static",
-  siteUrl: "https://haiiro.moe/~cakes/",
+  siteUrl: "https://haiiro.moe/~cakes",
 };
