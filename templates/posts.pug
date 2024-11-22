@@ -13,7 +13,7 @@ block content
                             if post.image
                                 .image
                                     a(href=`/~cakes/posts/${post.slug}`)
-                                        img(src=`${post.image}`, alt=post.title).mx-auto
+                                        img(src=`/~cakes${post.image}`, alt=post.title).mx-auto
                             .header
                                 if post.type !== 'micro'
                                     if post.tags
