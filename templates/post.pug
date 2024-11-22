@@ -2,9 +2,9 @@ extends includes/head
 block content
     .container.post
         if post.type === 'post'
-            a(href="/posts").back < Back to posts
+            a(href="/~cakes/posts").back < Back to posts
         else
-            a(href="/").back < Back home
+            a(href="/~cakes/").back < Back home
         if post.image
             .image
                 img(src=`${post.image}`, alt=post.title).mx-auto
@@ -13,7 +13,7 @@ block content
                 if post.tags
                     .tags
                         each tag in post.tags
-                            a(href=`/tags/${tag}`).tag= tag
+                            a(href=`/~cakes/tags/${tag}`).tag= tag
                 h1.title= post.title
                 if post.description
                     h2.description= post.description

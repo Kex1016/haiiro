@@ -3,7 +3,7 @@ block content
     .container.posts
         if posts.length === 0
             h1.text-center No posts yet!
-            a.back.text-center.w-full(href="/") < Go back home.
+            a.back.text-center.w-full(href="/~cakes/") < Go back home.
         else
             .split
                 .posts
@@ -12,15 +12,15 @@ block content
                         article.box.post-card(style=`${post.type === 'micro' ? 'border: 3px solid var(--neutral-400)' : ''}`, id=`${post.slug}`)
                             if post.image
                                 .image
-                                    a(href=`/posts/${post.slug}`)
+                                    a(href=`/~cakes/posts/${post.slug}`)
                                         img(src=`${post.image}`, alt=post.title).mx-auto
                             .header
                                 if post.type !== 'micro'
                                     if post.tags
                                         .tags
                                             each tag in post.tags
-                                                a(href=`/tags/${tag}`).tag= tag
-                                    a(href=`/posts/${post.slug}`)
+                                                a(href=`/~cakes/tags/${tag}`).tag= tag
+                                    a(href=`/~cakes/posts/${post.slug}`)
                                         h1.title= post.title
                                         if post.description && post.type === 'post'
                                             h2.description= post.description
@@ -35,4 +35,4 @@ block content
                     h1.text-center.mb-3 Tags
                     each tag in Object.keys(tags).sort(((a,b)=>tags[a].length < tags[b].length))
                         article.box.tag-card
-                            a(href=`/tags/${tag}`).w-full= tag + ` (${tags[tag].length})`
+                            a(href=`/~cakes/tags/${tag}`).w-full= tag + ` (${tags[tag].length})`

@@ -3,22 +3,22 @@ block content
     .container.posts
         if posts.length === 0
             h1.text-center No posts yet!
-            a.back.text-center.w-full(href="/") < Go back home.
+            a.back.text-center.w-full(href="/~cakes/") < Go back home.
         else
-            a.back.text-center.w-full(href="/posts") < Back to posts
+            a.back.text-center.w-full(href="/~cakes/posts") < Back to posts
             h1.text-center.mb-3 Posts tagged with #{tag}
             each post in posts.sort((a, b) => new Date(b.date) - new Date(a.date))
                 article.box.post-card
                     if post.image
                         .image
-                            a(href=`/posts/${post.slug}`)
+                            a(href=`/~cakes/posts/${post.slug}`)
                                 img(src=`${post.image}`, alt=post.title).mx-auto
                     .header
                         if post.tags
                             .tags
                                 each tag in post.tags
-                                    a(href=`/tags/${tag}`).tag= tag
-                            a(href=`/posts/${post.slug}`)
+                                    a(href=`/~cakes/tags/${tag}`).tag= tag
+                            a(href=`/~cakes/posts/${post.slug}`)
                                 h1.title= post.title
                                 if post.description
                                     h2.description= post.description

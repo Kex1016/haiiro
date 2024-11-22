@@ -38,4 +38,4 @@ Well, that is all for now. Have a great day! Hopefully my next post will be
 about a project. Oh, and you might've noticed that I also reworked all my
 posts' tags. I've made it a rule to not use more than 3 tags per post, and
 also to have them a little more broad. I have also corrected some mistakes
-in the [about page](/about).
+in the [about page](/~cakes/about).

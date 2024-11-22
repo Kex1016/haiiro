@@ -18,13 +18,13 @@ html(lang="en")
         meta(property="og:description", content=`${metaDesc || 'a simple blog for a simple person.'}`)
         meta(property="og:type", content="website")
         meta(property="og:url", content=`${canonical}`)
-        meta(property="og:image", content=`${ogImage || "https://haiiro.moe/images/og-image.png"}`)
+        meta(property="og:image", content=`${ogImage || "https://haiiro.moe/~cakes/images/og-image.png"}`)
         // Favicon
-        link(rel="icon", type="image/png", href="/favicon.png")
+        link(rel="icon", type="image/png", href="/~cakes/favicon.png")
         // Other links
         link(rel="canonical", href=`${canonical}`)
         // Highlight.js
-        link(rel="stylesheet", href="/highlight/styles/dark.css")
+        link(rel="stylesheet", href="/~cakes/highlight/styles/dark.css")
         // test
         script.
             const t = localStorage.getItem('theme');
@@ -42,7 +42,7 @@ html(lang="en")
         else
             meta(name="keywords", content="blog, simple, creative, personal, haiiro, cakes, cakeswastaken")
         // CSS
-        link(rel="stylesheet", href="/style.css")
+        link(rel="stylesheet", href="/~cakes/style.css")
     body
         unless currentPage === 'home'
             include ../includes/nav.pug
