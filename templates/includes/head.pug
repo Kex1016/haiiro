@@ -13,6 +13,8 @@ html(lang="en")
         meta(name="twitter:creator", content="@cakeswastaken")
         meta(name="twitter:title", content=`${title}`)
         meta(name="twitter:description", content=`${metaDesc || 'a simple blog for a simple person.'}`)
+        meta(name="twitter:card", content="summary_large_image")
+        meta(name="twitter:image", content=`https://haiiro.moe/~cakes${ogImage || "/images/og-image.png"}`)
         // Open Graph
         meta(property="og:title", content=`${title}`)
         meta(property="og:description", content=`${metaDesc || 'a simple blog for a simple person.'}`)
