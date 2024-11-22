@@ -133,7 +133,7 @@ async function processFile(filePath: string) {
     fs.writeFileSync(
       path.join(postPath, "index.html"),
       postTemplate({
-        title: `haiiro - ${data.title.toLowerCase()}`,
+        title: `haiiro / cakes / ${data.title.toLowerCase()}`,
         type: data.type,
         post: {
           title: data.title,
@@ -174,7 +174,7 @@ const indexTemplate = Pug.compileFile(path.join(templatePath, "index.pug"), {
 fs.writeFileSync(
   path.join(outputPath, "index.html"),
   indexTemplate({
-    title: "haiiro",
+    title: "haiiro / cakes",
     canonical: Settings.siteUrl,
     currentPage: "home",
   })
@@ -213,7 +213,7 @@ const postListTemplate = Pug.compileFile(path.join(templatePath, "posts.pug"), {
 fs.writeFileSync(
   path.join(outputPath, "posts", "index.html"),
   postListTemplate({
-    title: "haiiro - posts",
+    title: "haiiro / cakes / posts",
     posts: posts,
     canonical: `${Settings.siteUrl}/${Settings.postDir}`,
     currentPage: "posts",
@@ -234,7 +234,7 @@ for (const tag in tags) {
   fs.writeFileSync(
     path.join(outputPath, "tags", tag, "index.html"),
     tagTemplate({
-      title: `haiiro - ${tag}`,
+      title: `haiiro / cakes / ${tag}`,
       posts: tags[tag],
       tag: tag,
       canonical: `${Settings.siteUrl}/tags/${tag}`,
@@ -264,7 +264,7 @@ const feedObject = {
           },
         },
         {
-          title: "haiiro",
+          title: "haiiro / cakes",
         },
         {
           generator: "haiiro static site generator",
@@ -272,7 +272,7 @@ const feedObject = {
         {
           link: `${Settings.siteUrl}/`,
         },
-        { description: "Recent content from haiiro.moe" },
+        { description: "Recent content from haiiro.moe/~cakes" },
         { language: "en-US" },
         { lastBuildDate: new Date().toUTCString() },
         ...posts
