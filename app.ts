@@ -257,7 +257,7 @@ const feedObject = {
         {
           "atom:link": {
             _attr: {
-              href: `${Settings.siteUrl}/feed.xml`,
+              href: `${Settings.siteUrl}/index.xml`,
               rel: "self",
               type: "application/rss+xml",
             },
