@@ -5,9 +5,13 @@ import Settings from "./settings.ts";
 
 const srv = Bun.serve({
   fetch(req: Request): Response | Promise<Response> {
+    console.log(`Serving ${req.url}`);
+
     // Serve all the files in the Settings.outputDir directory
     const outputPath = path.join(__dirname, Settings.outputDir);
     const url = new URL(req.url);
+    // Replace "~cakes" with nothing
+    url.pathname = url.pathname.replace(/^\/~cakes/, "");
     const file = url.pathname;
     const filePath = path.join(outputPath, file);
     if (fs.existsSync(filePath)) {
