@@ -243,6 +243,31 @@ for (const tag in tags) {
   );
 }
 
+console.log("Rendering 'latest post' page...");
+const latestPostTemplate = Pug.compileFile(
+  path.join(templatePath, "latest_post.pug"),
+  {
+    pretty: Settings.isPretty,
+  }
+);
+
+if (!fs.existsSync(path.join(outputPath, "latest"))) {
+  fs.mkdirSync(path.join(outputPath, "latest"), { recursive: true });
+}
+
+const latestPost = posts.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)[0];
+fs.writeFileSync(
+  path.join(outputPath, "latest", "index.html"),
+  latestPostTemplate({
+    title: `haiiro / cakes / latest post`,
+    slug: latestPost.slug || "",
+    canonical: `${Settings.siteUrl}/latest/`,
+    currentPage: `latest`,
+  })
+);
+
 console.log("Generating RSS feed...");
 const feedObject = {
   rss: [
