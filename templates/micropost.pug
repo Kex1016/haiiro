@@ -2,5 +2,5 @@ extends includes/head
 block content
     script.
         const url = new URL(window.location.href);
-        const slug = url.pathname.split('/')[2];
+        const slug = url.pathname.split('/')[3];
         window.location.href = `/~cakes/posts/#${slug}`
